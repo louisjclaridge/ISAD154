@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Isad154_project;
+
 
 /// <summary>
 /// Summary description for workplan
 /// </summary>
-public class workplan
+public class Workplan
 {
     private int workplanNumber;
     private string workplanNotes;
@@ -16,7 +18,9 @@ public class workplan
     private string workplanStatus;
 
 
-    public workplan(int inWorkplanNumber, string inWorkplanNotes, 
+   
+
+    public Workplan(int inWorkplanNumber, string inWorkplanNotes, 
         string inWorkplanProblem, string inCheckInDate, string inDueDate, string inWorkplanStatus )
     {
         workplanNumber = inWorkplanNumber;
@@ -26,6 +30,13 @@ public class workplan
         dueDate = inDueDate;
         workplanStatus = inWorkplanStatus;
         
+    }
+    //temp constructor
+    public Workplan(string inWorkplanProblem, string inCheckInDate, string inDueDate)
+    {
+        workplanProblem = inWorkplanProblem;
+        checkInDate = inCheckInDate;
+        dueDate = inDueDate;
     }
 
     //properties 
@@ -98,12 +109,13 @@ public class workplan
     }
     //methods 
     // need to select the file we are reading/saving to 
-    
-    //create workplan
-    //select workplan
-    //update workplan
-    //work plan display format 
 
+    //create workplan
+    private void createWorkplan()
+    {
+       
+    }
+    
 
 
 }
