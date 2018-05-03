@@ -14,8 +14,5 @@ namespace Isad154_project
 
         }
 
-        public void test()
-        {
-        }
     }
 }
