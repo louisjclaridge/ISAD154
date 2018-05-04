@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Isad154_project;
+using Newtonsoft.Json;
+using System.Text;
+using System.IO;
+using System.Collections;
 
 
 /// <summary>
@@ -16,21 +20,28 @@ public class Workplan
     private string checkInDate; //maybe change to dates
     private string dueDate;  //maybe change to dates
     private string workplanStatus;
+    private ArrayList allWorkplans;
+    
 
+    
 
-   
-
-    public Workplan(int inWorkplanNumber, string inWorkplanNotes, 
-        string inWorkplanProblem, string inCheckInDate, string inDueDate, string inWorkplanStatus )
-    {
-        workplanNumber = inWorkplanNumber;
-        workplanNotes = inWorkplanNotes;
-        workplanProblem = inWorkplanProblem;
-        checkInDate = inCheckInDate;
-        dueDate = inDueDate;
-        workplanStatus = inWorkplanStatus;
+    //public Workplan(int inWorkplanNumber, string inWorkplanNotes,
+    //    string inWorkplanProblem, string inCheckInDate, string inDueDate, string inWorkplanStatus)
+    //{
+    //    workplanNumber = inWorkplanNumber;
+    //    workplanNotes = inWorkplanNotes;
+    //    workplanProblem = inWorkplanProblem;
+    //    checkInDate = inCheckInDate;
+    //    dueDate = inDueDate;
+    //    workplanStatus = inWorkplanStatus;
         
-    }
+
+    //}
+    //public Workplan(ArrayList inAllWorkplans)
+    //{
+    //    allWorkplans = inAllWorkplans;
+    //}
+
     //temp constructor
     public Workplan(string inWorkplanProblem, string inCheckInDate, string inDueDate)
     {
@@ -39,7 +50,7 @@ public class Workplan
         dueDate = inDueDate;
     }
 
-    //properties 
+    
 
     public int WorkplanNumber
     {
@@ -56,7 +67,7 @@ public class Workplan
     {
         get
         {
-            return workplanNotes ;
+            return workplanNotes;
         }
         set
         {
@@ -71,7 +82,7 @@ public class Workplan
         }
         set
         {
-             workplanProblem = value;
+            workplanProblem = value;
         }
     }
     public string CheckInDate
@@ -93,7 +104,7 @@ public class Workplan
         }
         set
         {
-             dueDate = value;
+            dueDate = value;
         }
     }
     public string WorkplanStatus
@@ -104,18 +115,44 @@ public class Workplan
         }
         set
         {
-             workplanStatus = value;
+            workplanStatus = value;
         }
     }
-    //methods 
-    // need to select the file we are reading/saving to 
-
-    //create workplan
-    private void createWorkplan()
+    public ArrayList AllWorkplans
     {
-       
+        get
+        {
+            return allWorkplans;
+        }
+        set
+        {
+            allWorkplans = value;
+        }
     }
+   
+    public void CreateNewWorkplan()
+    {
+        string newJson;
+        using (StreamReader file = new StreamReader(@"C:\\Users\\Work\\Documents\\GitHub\\ISAD154\\Isad154_project\\App_Data\\workplan.json"))
+        {
+            string json = file.ReadToEnd();
+            List<Workplan> items = JsonConvert.DeserializeObject<List<Workplan>>(json);
+            items.Add(this);
+            newJson = JsonConvert.SerializeObject(items);
+            
+        }
+        File.WriteAllText(@"C:\\Users\\Work\\Documents\\GitHub\\ISAD154\\Isad154_project\\App_Data\\workplan.json", newJson);
+
     
 
 
+        
+
+
+
+    }
+    public static void ReadWorkplan()
+    {
+
+    }
 }

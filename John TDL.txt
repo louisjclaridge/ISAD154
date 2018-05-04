@@ -1,0 +1,9 @@
+create read workplan
+finish create workplan
+  -created an arr
+create update workplan
+finish read cars
+
+add Workplan arraylist property accessor 
+
+
