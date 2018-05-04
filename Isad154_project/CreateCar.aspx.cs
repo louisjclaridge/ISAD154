@@ -32,7 +32,7 @@ namespace Isad154_project
         }
 
 
-        private void readCar()
+        public void readCar()
         {
             using (StreamReader r = new StreamReader("C:/Users/Jack Parsons/Documents/GitHub/ISAD154/Isad154_project/App_Data/Car.json"))
             {
@@ -44,7 +44,26 @@ namespace Isad154_project
 
                 MessageBox.Show(items[1].CarReg.ToString());
                 
+                
             }
+            
+
+        }
+
+        public static List<Car> getAllCars()
+        {
+            using (StreamReader r = new StreamReader("C:/Users/Jack Parsons/Documents/GitHub/ISAD154/Isad154_project/App_Data/Car.json"))
+            {
+
+                string json = r.ReadToEnd();
+
+
+                List<Car> items = JsonConvert.DeserializeObject<List<Car>>(json);
+                return items;
+
+
+            }
+
 
         }
     }

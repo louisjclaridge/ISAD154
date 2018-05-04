@@ -9,7 +9,18 @@
 <body>
     <form id="form1" runat="server">
         <div>
-        </div>
+            Pick customer</div>
+        <asp:DropDownList ID="DropDownList1" runat="server">
+        </asp:DropDownList>
+        <p>
+            <asp:Button ID="CreateCustomerBtn" runat="server" Text="Create Customer" />
+        </p>
+        Pick Car<br />
+        <asp:DropDownList ID="DropDownCar" runat="server">
+        </asp:DropDownList>
+        <p>
+            <asp:Button ID="CreateCarBtn" runat="server" OnClick="CreateCarBtn_Click" Text="Create car" />
+        </p>
     </form>
 </body>
 </html>
