@@ -7,31 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-<<<<<<< HEAD:Isad154_project/Contact.aspx.designer.cs
 namespace Isad154_project {
     
     
-    public partial class Contact {
+    public partial class workplan {
         
         /// <summary>
         /// lblBookingNumber control.
-=======
-namespace Isad154_project
-{
-
-
-    public partial class CreateBooking
-    {
-
-        /// <summary>
-        /// form1 control.
->>>>>>> master:Isad154_project/CreateBooking.aspx.designer.cs
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-<<<<<<< HEAD:Isad154_project/Contact.aspx.designer.cs
         protected global::System.Web.UI.WebControls.Label lblBookingNumber;
         
         /// <summary>
@@ -87,8 +74,5 @@ namespace Isad154_project
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListBox lstboxTask;
-=======
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
->>>>>>> master:Isad154_project/CreateBooking.aspx.designer.cs
     }
 }
