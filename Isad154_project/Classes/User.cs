@@ -14,9 +14,9 @@ namespace Isad154_project.Classes
         public DateTime dateOfBirth;
         public string address;
         public string email;
-        public int phoneNumber;
+        public string phoneNumber;
 
-        public User(int userAccountID, string userAccountType, string userFirstName, string userLastName, DateTime userDateOfBirth, string userAddress, string userEmail, int userPhoneNumber)
+        public User(int userAccountID, string userAccountType, string userFirstName, string userLastName, DateTime userDateOfBirth, string userAddress, string userEmail, string userPhoneNumber)
         {
             accountID = userAccountID;
             accountType = userAccountType;

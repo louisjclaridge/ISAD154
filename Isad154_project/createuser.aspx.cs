@@ -14,5 +14,23 @@ namespace Isad154_project
 
         }
 
+        protected void Submit_Click(object sender, EventArgs e)
+        {
+            string email, accountType, firstName, lastName, address, phoneNumber;
+
+            email = txtEmail.Text;
+            accountType = drpAccountType.SelectedItem.Text;
+            firstName = txtFirstName.Text;
+            lastName = txtLastName.Text;
+            address = txtAddress.Text;
+            phoneNumber = txtPhoneNumber.Text;
+
+            lblTestOutput.Text = email + " " + accountType + " " + firstName + " " + lastName + " " + address + " " + phoneNumber;
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

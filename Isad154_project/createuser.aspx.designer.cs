@@ -49,13 +49,13 @@ namespace Isad154_project {
         protected global::System.Web.UI.WebControls.Label accountTypeLabel;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// drpAccountType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList drpAccountType;
         
         /// <summary>
         /// firstNameLabel control.
@@ -155,5 +155,14 @@ namespace Isad154_project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Submit;
+        
+        /// <summary>
+        /// lblTestOutput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTestOutput;
     }
 }
