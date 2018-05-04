@@ -103,13 +103,13 @@ namespace Isad154_project {
         protected global::System.Web.UI.WebControls.Label dateOfBirthLabel;
         
         /// <summary>
-        /// cldDateOfBirth control.
+        /// txtDateOfBirth control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar cldDateOfBirth;
+        protected global::System.Web.UI.WebControls.TextBox txtDateOfBirth;
         
         /// <summary>
         /// addressLabel control.

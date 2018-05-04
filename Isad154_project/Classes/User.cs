@@ -11,12 +11,12 @@ namespace Isad154_project.Classes
         public string accountType;
         public string firstName;
         public string lastName;
-        public DateTime dateOfBirth;
+        public string dateOfBirth;
         public string address;
         public string email;
         public string phoneNumber;
 
-        public User(int userAccountID, string userAccountType, string userFirstName, string userLastName, DateTime userDateOfBirth, string userAddress, string userEmail, string userPhoneNumber)
+        public User(int userAccountID, string userAccountType, string userFirstName, string userLastName, string userDateOfBirth, string userAddress, string userEmail, string userPhoneNumber)
         {
             accountID = userAccountID;
             accountType = userAccountType;
@@ -26,6 +26,13 @@ namespace Isad154_project.Classes
             address = userAddress;
             email = userEmail;
             phoneNumber = userPhoneNumber;
+        }
+
+        public string getAllInfo()
+        {
+         string output =  Convert.ToString(accountID) + " " + accountType + " " + firstName + " " + lastName + " " + dateOfBirth + " " + address + " " + email + " " + phoneNumber;
+
+            return output;
         }
     }
 }

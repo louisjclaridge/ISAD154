@@ -371,6 +371,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Classes\Car.cs" />
     <Compile Include="Classes\Customer.cs" />
     <Compile Include="Classes\Staff.cs" />
     <Compile Include="Classes\User.cs" />
