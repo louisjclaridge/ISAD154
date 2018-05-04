@@ -1,0 +1,36 @@
+body
+{
+	background-color: grey;
+}
+
+#container
+{
+	width: 80%;
+	padding-top: 4%;
+}
+
+#hub-main-container
+{
+	width: 80%;
+	padding-top: 2%;
+}
+#login-container
+{
+	width: 40%;
+	border: solid;
+	border-width: 3px;
+	border-color: black;
+	padding: 1%;
+	border-radius: 12px;
+	background-color: white
+}
+#hub-container
+{
+	width: 65%;
+	border: solid;
+	border-width: 3px;
+	border-color: black;
+	padding: 1%;
+	border-radius: 12px;
+	background-color: white;
+}
