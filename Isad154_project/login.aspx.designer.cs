@@ -11,7 +11,7 @@ namespace Isad154_project
 {
 
 
-    public partial class Hub
+    public partial class login
     {
 
         /// <summary>

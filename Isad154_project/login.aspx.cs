@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Isad154_project
 {
-    public partial class workplan : System.Web.UI.Page
+    public partial class login : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
