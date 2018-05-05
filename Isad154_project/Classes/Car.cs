@@ -9,7 +9,7 @@ namespace Isad154_project.Classes
 {
     public class Car
     {
-
+        public string CarId { get; set; }
         public string CarReg { get; set; }
         public string CarPersonal { get; set; } // should be bool
         public string CarYear { get; set; }
@@ -18,8 +18,9 @@ namespace Isad154_project.Classes
         public string CarNotes { get; set; }
         public string CarLastMOT { get; set; } // should be datetime
 
-        public Car(string theCarReg, String theCarPersonal, string theCarYear, string theCarManufacture, string theCarModel, string theCarNotes, string theCarLastMOT)
+        public Car(string theCarID,string theCarReg, string theCarPersonal, string theCarYear, string theCarManufacture, string theCarModel, string theCarNotes, string theCarLastMOT)
         {
+            CarId = theCarID;//Create this randomly
             CarReg = theCarReg;
             CarPersonal = theCarPersonal;
             CarYear = theCarYear;

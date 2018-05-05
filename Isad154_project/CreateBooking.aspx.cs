@@ -5,45 +5,44 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace Isad154_project
 {
     public partial class CreateBooking : System.Web.UI.Page
     {
+        List<Car> carss = new List<Car>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.Form.Target = "_blank";
+            Console.WriteLine("Loaded");
+            this.Form.Target = "_blank";//Open new page
 
-            List<Car> cars = CreateCar.getAllCars();
+            List<Car> cars = CreateCar.getAllCars();//Change to only the customers car
             List<string> s = new List<string>();
             foreach (Car c in cars)
             {
-                s.Add(c.CarModel);
+                s.Add(c.CarId);
 
             }
             DropDownCar.DataSource = s;
             DropDownCar.DataBind();
+            //List<Customer> customers = Classes.User.getAllInfo();
 
-
-
-
-
-
-
-            //var items = new List<string>
-            //{
-            //    "111",
-            //    "222",
-            //    "333"
-            //};
-            //items.Sort();
-            //DropDownCar.DataSource = items;
-            //DropDownCar.DataBind();
+            carss = cars;
         }
 
         protected void CreateCarBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("CreateCar.aspx");
+            Response.Redirect("CreateCar.aspx");//Open New page
+        }
+
+        protected void CreateBookingBtn_Click(object sender, EventArgs e)
+        {
+            //Get selcted customer
+            //get selected car
+            //add to booking
+            Booking booking = new Booking(DropDownCustomer.SelectedItem.Text,DropDownCar.SelectedItem.Text);
+            booking.writeToJson();
         }
     }
 }

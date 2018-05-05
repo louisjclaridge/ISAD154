@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
         <div>
             Pick customer</div>
-        <asp:DropDownList ID="DropDownList1" runat="server">
+        <asp:DropDownList ID="DropDownCustomer" runat="server">
         </asp:DropDownList>
         <p>
             <asp:Button ID="CreateCustomerBtn" runat="server" Text="Create Customer" />
@@ -21,6 +21,7 @@
         <p>
             <asp:Button ID="CreateCarBtn" runat="server" OnClick="CreateCarBtn_Click" Text="Create car" />
         </p>
+        <asp:Button ID="CreateBookingBtn" runat="server" OnClick="CreateBookingBtn_Click" Text="Create Booking" />
     </form>
 </body>
 </html>

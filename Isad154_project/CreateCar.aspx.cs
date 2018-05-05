@@ -19,7 +19,7 @@ namespace Isad154_project
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Car newCar = new Car(carReg.Text,carPersonal.Text,carYear.Text,carManufacture.Text,carModel.Text,carNotes.Text,carLastMOT.Text);
+            Car newCar = new Car(CarId.Text,carReg.Text,carPersonal.Text,carYear.Text,carManufacture.Text,carModel.Text,carNotes.Text,carLastMOT.Text);
 
             newCar.writeToJson();
             

@@ -9,7 +9,9 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            Car number (Not entered).<br />
+            Car ID:
+            <asp:TextBox ID="CarId" runat="server"></asp:TextBox>
+            <br />
             
             Enter Car Reg: <asp:TextBox runat="server" ID="carReg"/><br />
             Pesonal ? (Y/N): <asp:TextBox runat="server" ID="carPersonal"/><br />
