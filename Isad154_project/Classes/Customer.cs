@@ -24,14 +24,14 @@ namespace Isad154_project.Classes
 
 
             string newJson;
-            using (StreamReader r = new StreamReader(@"F:/ISAD154/Isad154_project/customers.json"))
+            using (StreamReader r = new StreamReader(@"F:/ISAD154/Isad154_project/users.json"))
             {
                 string json = r.ReadToEnd();
                 List<Customer> items = JsonConvert.DeserializeObject<List<Customer>>(json);
                 items.Add(this);
                 newJson = JsonConvert.SerializeObject(items);
             }
-            File.WriteAllText(@"F:/ISAD154/Isad154_project/customers.Json", newJson);
+            File.WriteAllText(@"F:/ISAD154/Isad154_project/users.Json", newJson);
 
 
 
