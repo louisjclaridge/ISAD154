@@ -42,6 +42,8 @@ namespace Isad154_project
             {
                 Classes.Customer newCustomer = new Classes.Customer(id, accountType, firstName, lastName, dateOfBirth, address, email, phoneNumber, carlist);
                 lblTestOutput.Text = newCustomer.getAllInfo() + carlist.Count;
+
+                newCustomer.writeToJson();
             }
 
             else if (accountType.Contains("Manager"))
@@ -49,12 +51,6 @@ namespace Isad154_project
                 Classes.User newUser = new Classes.User(id, accountType, firstName, lastName, dateOfBirth, address, email, phoneNumber);
                 lblTestOutput.Text = newUser.getAllInfo();
             }
-        }
-
-
-        private void saveToJson()
-        {
-
         }
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 using System.Linq;
 using System.Web;
+using System.IO;
 
 namespace Isad154_project.Classes
 {
@@ -15,6 +17,24 @@ namespace Isad154_project.Classes
         {
             string output = Convert.ToString(accountID) + " " + accountType + " " + firstName + " " + lastName + " " + dateOfBirth + " " + address + " " + email + " " + phoneNumber + "This is a customer class";
             return output;
+        }
+
+        public void writeToJson()
+        {
+
+
+            string newJson;
+            using (StreamReader r = new StreamReader(@"F:/ISAD154/Isad154_project/customers.json"))
+            {
+                string json = r.ReadToEnd();
+                List<Customer> items = JsonConvert.DeserializeObject<List<Customer>>(json);
+                items.Add(this);
+                newJson = JsonConvert.SerializeObject(items);
+            }
+            File.WriteAllText(@"F:/ISAD154/Isad154_project/customers.Json", newJson);
+
+
+
         }
     }
 }
