@@ -20,12 +20,12 @@
         <asp:ListItem Text="text2" />
     </asp:ListBox>
 
-        <div><p>workplan number:</p>
-            <asp:Label Text="workplan number will display here" runat="server" ID="lblWorkplanNumber" name ="" /></div>
+     
+          
        <div><p>problem</p><asp:TextBox runat="server" ID="txtProblem" /></div> 
        <div><p>check in date</p><asp:TextBox runat="server" ID="txtCheckInDate" /></div>
         <div><p>due date</p><asp:TextBox runat="server" ID="txtDueDate" /></div>
-        <div><p>status</p><asp:Label Text="status will display here" runat="server" />
+
             <br />
         </div>
 

@@ -20,19 +20,39 @@ namespace Isad154_project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            OutputWorkplan();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
             Workplan newWorkplan = new Workplan(txtProblem.Text, txtCheckInDate.Text, txtDueDate.Text);
             newWorkplan.CreateNewWorkplan();
+            OutputWorkplan();
+
 
 
 
         }
+        
+        public void OutputWorkplan()
+        {
+            
+            lstboxWorkplan.Items.Clear();
+            Workplan.ReadWorkplan();
+            List<Workplan> newW = Workplan.ReadWorkplan();
+
+            ////lstboxWorkplan.DataSource = newW;
+            //lstboxWorkplan.Items.Add(newW.id);
+
+            foreach (Workplan a in Workplan.ReadWorkplan())
+            {
+                lstboxWorkplan.Items.Add(a.getWorkplanDisplayFormula());
+            }
+        }
     }
 }
+
+//needs to add car with matching workplan number , based on workplan selected display car below 
         
         
             

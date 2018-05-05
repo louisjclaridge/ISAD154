@@ -151,8 +151,23 @@ public class Workplan
 
 
     }
-    public static void ReadWorkplan()
+    public static List<Workplan> ReadWorkplan()
     {
+        using (StreamReader file = new StreamReader("C:\\Users\\Work\\Documents\\GitHub\\ISAD154\\Isad154_project\\App_Data\\workplan.json"))
+        {
+            string json = file.ReadToEnd();
 
+            List<Workplan> items = JsonConvert.DeserializeObject<List<Workplan>>(json);
+
+            return items;
+        }
+
+    }
+    
+    public string getWorkplanDisplayFormula()
+    {
+        string output;
+        output = "WorkplanNumber: " + "   " + workplanNumber + "   " + "workplanNotes: " + "  " + WorkplanNotes + "   " + "checkInDate: " + "   " + checkInDate + "   " + "dueDate: " + "   " + dueDate + "   " + "WorkplanStatus " + "   " + WorkplanStatus;
+        return output;
     }
 }

@@ -1,9 +1,24 @@
 create read workplan
 finish create workplan
-  -created an arr
+  -add a booking number to the json file
+  -method to create unique identifiers
+  -add a selector for status 
+  -change date to datetime or input validate? 
+  -add a field for workplan notes 
 create update workplan
-finish read cars
+finish read workplan
+ =polish of the display formula , more spaces maybe
+finish read parts
+  -create UI 
+  -create JSON file
+  -get it to read out
+  -method to return certain parts? 
+ 
 
-add Workplan arraylist property accessor 
 
+input validation and exception handling
+improve the aethestics 
 
+begin merge
+
+impve the file selection to a shortened URL inside the directory

@@ -31,15 +31,6 @@ namespace Isad154_project {
         protected global::System.Web.UI.WebControls.ListBox lstboxWorkplan;
         
         /// <summary>
-        /// lblWorkplanNumber control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblWorkplanNumber;
-        
-        /// <summary>
         /// txtProblem control.
         /// </summary>
         /// <remarks>
