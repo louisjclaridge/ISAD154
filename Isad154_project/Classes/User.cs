@@ -9,7 +9,7 @@ namespace Isad154_project.Classes
 {
     public class User
     {
-        public int accountID { get; set; } 
+        public string accountID { get; set; } 
         public string accountType { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
@@ -18,7 +18,7 @@ namespace Isad154_project.Classes
         public string email { get; set; }
         public string phoneNumber { get; set; }
 
-        public User(int userAccountID, string userAccountType, string userFirstName, string userLastName, string userDateOfBirth, string userAddress, string userEmail, string userPhoneNumber)
+        public User(string userAccountID, string userAccountType, string userFirstName, string userLastName, string userDateOfBirth, string userAddress, string userEmail, string userPhoneNumber)
         {
             accountID = userAccountID; 
             accountType = userAccountType;
