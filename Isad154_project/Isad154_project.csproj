@@ -214,6 +214,7 @@
     </Content>
     <Content Include="App_Data\Car.json" />
     <Content Include="App_Data\Booking.json" />
+    <Content Include="App_Data\users.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Hub.aspx" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
@@ -250,6 +251,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="ViewBooking.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -420,6 +422,13 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewBooking.aspx.cs">
+      <DependentUpon>ViewBooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewBooking.aspx.designer.cs">
+      <DependentUpon>ViewBooking.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

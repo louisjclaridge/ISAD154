@@ -66,5 +66,27 @@ namespace Isad154_project
 
 
         }
+        //****************************************************
+        //****************************************************
+        //REFERENCE REAL GET ALL USERS
+        //SHOULD BE IN LOUIS CREATE USER PAGE
+        //********************************************
+        //********************************************
+        public static List<User> getAllUsers()
+        {
+            using (StreamReader r = new StreamReader("C:/Users/Jack Parsons/Documents/GitHub/ISAD154/Isad154_project/App_Data/users.json"))
+            {
+
+                string json = r.ReadToEnd();
+
+
+                List<User> items = JsonConvert.DeserializeObject<List<User>>(json);
+                return items;
+
+
+            }
+
+
+        }
     }
 }

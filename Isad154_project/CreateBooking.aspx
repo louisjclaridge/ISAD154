@@ -16,12 +16,16 @@
             <asp:Button ID="CreateCustomerBtn" runat="server" Text="Create Customer" />
         </p>
         Pick Car<br />
-        <asp:DropDownList ID="DropDownCar" runat="server">
+        <asp:DropDownList ID="DropDownCar" runat="server" OnSelectedIndexChanged="DropDownCar_SelectedIndexChanged">
         </asp:DropDownList>
         <p>
             <asp:Button ID="CreateCarBtn" runat="server" OnClick="CreateCarBtn_Click" Text="Create car" />
         </p>
-        <asp:Button ID="CreateBookingBtn" runat="server" OnClick="CreateBookingBtn_Click" Text="Create Booking" />
+        <p>
+            &nbsp;</p>
+        <p>
+        <asp:Button ID="CreateBookingBtn" runat="server" OnClick="CreateBookingBtn_Click" Text="Create Booking" UseSubmitBehavior="False" />
+        </p>
     </form>
 </body>
 </html>
