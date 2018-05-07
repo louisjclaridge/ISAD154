@@ -27,7 +27,7 @@
         <div><p>due date</p><asp:TextBox runat="server" ID="txtDueDate" /></div>
 
             <br />
-        </div>
+        
 
        
             <asp:Button ID="btnCreateWorkplan" runat="server" OnClick="Button1_Click" Text="create workplan" Width="139px" />
