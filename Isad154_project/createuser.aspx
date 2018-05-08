@@ -10,13 +10,18 @@
     <form id="form1" runat="server">
         <div>
 
-    <asp:Label ID="emailLabel" runat="server" Text="Email"></asp:Label>
+    <asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label>
     <br>
     <asp:TextBox ID="txtEmail" runat="server" TextMode="Email"></asp:TextBox>
+            <br />
+            <asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label>
             <br>
-    <asp:Label ID="accountTypeLabel" runat="server" Text="Account Type"></asp:Label>
+            <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
             <%--test stuff later--%>
+            <asp:Button ID="btnGenerate" runat="server" OnClick="Button1_Click" Text="Generate Password" />
     <br>
+    <asp:Label ID="accountTypeLabel" runat="server" Text="Account Type"></asp:Label>
+            <br />
     <asp:DropDownList ID="drpAccountType" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
         <asp:ListItem>Manager</asp:ListItem>
         <asp:ListItem Selected="True">Staff</asp:ListItem>
@@ -44,7 +49,6 @@
             <br>
      <asp:Button ID="Submit" runat="server" Text="Button" OnClick="Submit_Click" />
         </div>
-        <asp:Label ID="lblTestOutput" runat="server" Text="Label"></asp:Label>
     </form>
     </body>
 </html>

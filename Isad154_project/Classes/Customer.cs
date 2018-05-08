@@ -9,7 +9,7 @@ namespace Isad154_project.Classes
 {
     public class Customer : User
     {
-        public Customer(string userAccountID, string userAccountType, string userFirstName, string userLastName, string userDateOfBirth, string userAddress, string userEmail, string userPhoneNumber, List<Car> customerListOfCars) : base(userAccountID, userAccountType, userFirstName, userLastName, userDateOfBirth, userAddress, userEmail, userPhoneNumber)
+        public Customer(string userAccountID, string userPassword, string userAccountType, string userFirstName, string userLastName, string userDateOfBirth, string userAddress, string userEmail, string userPhoneNumber, List<Car> customerListOfCars) : base(userAccountID, userPassword, userAccountType, userFirstName, userLastName, userDateOfBirth, userAddress, userEmail, userPhoneNumber)
         {
 
         }
@@ -19,22 +19,17 @@ namespace Isad154_project.Classes
             return output;
         }
 
-        public void writeToJson()
+        public void writeCustomerToJson()
         {
-
-
             string newJson;
-            using (StreamReader r = new StreamReader(@"F:/ISAD154/Isad154_project/users.json"))
+            using (StreamReader r = new StreamReader(@"F:/ISAD154/Isad154_project/App_Data/users.json"))
             {
                 string json = r.ReadToEnd();
                 List<Customer> items = JsonConvert.DeserializeObject<List<Customer>>(json);
                 items.Add(this);
                 newJson = JsonConvert.SerializeObject(items);
             }
-            File.WriteAllText(@"F:/ISAD154/Isad154_project/users.Json", newJson);
-
-
-
+            File.WriteAllText(@"F:/ISAD154/Isad154_project/App_Data/users.Json", newJson);
         }
     }
 }

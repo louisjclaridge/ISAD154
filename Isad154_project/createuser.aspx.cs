@@ -17,13 +17,13 @@ namespace Isad154_project
 
         protected void Submit_Click(object sender, EventArgs e)
         {
-            string email, accountType, firstName, lastName, address, phoneNumber, dateOfBirth;
-            int id;
+            string id, email, password, accountType, firstName, lastName, address, phoneNumber, dateOfBirth;
             bool availability;
 
 
-            id = rand.Next(1, 22000);
+            id = rand.Next(1, 22000).ToString();
             email = txtEmail.Text;
+            password = txtPassword.Text;
             accountType = drpAccountType.SelectedItem.Text;
             firstName = txtFirstName.Text;
             lastName = txtLastName.Text;
@@ -35,26 +35,32 @@ namespace Isad154_project
             if (accountType.Contains("Staff"))
             {
                 availability = true;
-                Classes.Staff newStaff = new Classes.Staff(id, accountType, firstName, lastName, dateOfBirth, address, email, phoneNumber, availability);
-                lblTestOutput.Text = newStaff.getAllInfo();
+                Classes.Staff newStaff = new Classes.Staff(id, password, accountType, firstName, lastName, dateOfBirth, address, email, phoneNumber, availability);
+
+                newStaff.writeStaffToJson();
             }
             if (accountType.Contains("Customer"))
             {
-                Classes.Customer newCustomer = new Classes.Customer(id, accountType, firstName, lastName, dateOfBirth, address, email, phoneNumber, carlist);
-                lblTestOutput.Text = newCustomer.getAllInfo() + carlist.Count;
+                Classes.Customer newCustomer = new Classes.Customer(id, password, accountType, firstName, lastName, dateOfBirth, address, email, phoneNumber, carlist);
 
-                newCustomer.writeToJson();
+                newCustomer.writeCustomerToJson();
             }
 
             else if (accountType.Contains("Manager"))
             {
-                Classes.User newUser = new Classes.User(id, accountType, firstName, lastName, dateOfBirth, address, email, phoneNumber);
-                lblTestOutput.Text = newUser.getAllInfo();
+                Classes.User newUser = new Classes.User(id, password, accountType, firstName, lastName, dateOfBirth, address, email, phoneNumber);
+
+                newUser.writeUserToJson();
             }
         }
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            txtPassword.Text = System.Web.Security.Membership.GeneratePassword(12, 2);
         }
     }
 }
