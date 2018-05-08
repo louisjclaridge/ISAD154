@@ -15,7 +15,7 @@
         <div><p>booking number:</p><asp:Label Text="booking number will display here" runat="server" ID="lblBookingNumber" /></div>
         <h1>Select Workplan</h1>
 
-    <asp:ListBox runat="server" Width="1111px" ID="lstboxWorkplan">
+    <asp:ListBox runat="server" Width="1111px" ID="lstboxWorkplan" AutoPostBack="true" OnSelectedIndexChanged="lstboxWorkplan_SelectedIndexChanged">
         <asp:ListItem Text="text1" />
         <asp:ListItem Text="text2" />
     </asp:ListBox>
@@ -23,8 +23,15 @@
      
           
        <div><p>problem</p><asp:TextBox runat="server" ID="txtProblem" /></div> 
-       <div><p>check in date</p><asp:TextBox runat="server" ID="txtCheckInDate" /></div>
-        <div><p>due date</p><asp:TextBox runat="server" ID="txtDueDate" /></div>
+       <div><p>check in date</p><asp:TextBox runat="server" ID="txtCheckInDate" />&nbsp; </div>
+        <div><p>due date</p><asp:TextBox runat="server" ID="txtDueDate" />
+            <div><p>Notes</p><asp:TextBox runat="server" ID="txtNotes" Height="33px" Width="907px" /></div>
+            <br />
+        </div>
+
+            <br />
+        <br />
+        <br />
 
             <br />
         

@@ -1,13 +1,16 @@
 create read workplan
 finish create workplan
-  -add a booking number to the json file
-  -method to create unique identifiers
-  -add a selector for status 
+  -add a way to check if workplan number is unique
   -change date to datetime or input validate? 
-  -add a field for workplan notes 
+  -get booking number for new workplan
+
+
 create update workplan
+- added a int selectedWorkplan that equals lstboxWorkplan
+- needs to output selected workplan to the boxes 
 finish read workplan
  =polish of the display formula , more spaces maybe
+ability to sort by in workplans
 finish read parts
   -create UI 
   -create JSON file
@@ -22,3 +25,5 @@ improve the aethestics
 begin merge
 
 impve the file selection to a shortened URL inside the directory
+
+maybe add different views based on Louis's class

@@ -20,35 +20,35 @@ public class Workplan
     private string checkInDate; //maybe change to dates
     private string dueDate;  //maybe change to dates
     private string workplanStatus;
-    private ArrayList allWorkplans;
-    
+    //private ArrayList allWorkplans;
 
-    
 
-    //public Workplan(int inWorkplanNumber, string inWorkplanNotes,
-    //    string inWorkplanProblem, string inCheckInDate, string inDueDate, string inWorkplanStatus)
-    //{
-    //    workplanNumber = inWorkplanNumber;
-    //    workplanNotes = inWorkplanNotes;
-    //    workplanProblem = inWorkplanProblem;
-    //    checkInDate = inCheckInDate;
-    //    dueDate = inDueDate;
-    //    workplanStatus = inWorkplanStatus;
-        
 
-    //}
+
+    public Workplan(int inWorkplanNumber, string inWorkplanNotes,
+        string inWorkplanProblem, string inCheckInDate, string inDueDate, string inWorkplanStatus)
+    {
+        workplanNumber = inWorkplanNumber;
+        workplanNotes = inWorkplanNotes;
+        workplanProblem = inWorkplanProblem;
+        checkInDate = inCheckInDate;
+        dueDate = inDueDate;
+        workplanStatus = inWorkplanStatus;
+
+
+    }
     //public Workplan(ArrayList inAllWorkplans)
     //{
     //    allWorkplans = inAllWorkplans;
     //}
 
     //temp constructor
-    public Workplan(string inWorkplanProblem, string inCheckInDate, string inDueDate)
-    {
-        workplanProblem = inWorkplanProblem;
-        checkInDate = inCheckInDate;
-        dueDate = inDueDate;
-    }
+    //public Workplan(string inWorkplanProblem, string inCheckInDate, string inDueDate)
+    //{
+    //    workplanProblem = inWorkplanProblem;
+    //    checkInDate = inCheckInDate;
+    //    dueDate = inDueDate;
+    //}
 
     
 
@@ -118,17 +118,17 @@ public class Workplan
             workplanStatus = value;
         }
     }
-    public ArrayList AllWorkplans
-    {
-        get
-        {
-            return allWorkplans;
-        }
-        set
-        {
-            allWorkplans = value;
-        }
-    }
+    //public ArrayList AllWorkplans
+    //{
+    //    get
+    //    {
+    //        return allWorkplans;
+    //    }
+    //    set
+    //    {
+    //        allWorkplans = value;
+    //    }
+    //}
    
     public void CreateNewWorkplan()
     {
@@ -167,7 +167,7 @@ public class Workplan
     public string getWorkplanDisplayFormula()
     {
         string output;
-        output = "WorkplanNumber: " + "   " + workplanNumber + "   " + "workplanNotes: " + "  " + WorkplanNotes + "   " + "checkInDate: " + "   " + checkInDate + "   " + "dueDate: " + "   " + dueDate + "   " + "WorkplanStatus " + "   " + WorkplanStatus;
+        output = "WorkplanNumber: " + "   " + workplanNumber + "   " + "WorkplanProblem:"  + workplanProblem + "   " + "CheckInDate: " + "   " + checkInDate + "   " + "DueDate: " + "   " + dueDate + "   " + "WorkplanNotes: " + "  " + WorkplanNotes + "WorkplanStatus: " + "   " + WorkplanStatus;
         return output;
     }
 }
