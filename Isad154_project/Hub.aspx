@@ -9,10 +9,10 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Button ID="Button1" runat="server" Text="Create Booking" />
+            <asp:Button ID="BtnCreateBooking" runat="server" Text="Create Booking" OnClick="Button1_Click" />
             <br />
         </div>
-        <asp:Button ID="Button2" runat="server" Text="View Booking" />
+        <asp:Button ID="BtnViewBooking" runat="server" Text="View Booking" OnClick="BtnViewBooking_Click" />
     </form>
 </body>
 </html>

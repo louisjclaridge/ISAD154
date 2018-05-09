@@ -18,6 +18,7 @@
         <p>
             <asp:Label ID="lblCar" runat="server" Text="Label"></asp:Label>
         </p>
+        <asp:Button ID="BtnHub" runat="server" OnClick="BtnHub_Click" Text="&lt;Hub" />
     </form>
 </body>
 </html>

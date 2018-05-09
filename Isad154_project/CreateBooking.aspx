@@ -26,6 +26,7 @@
         <p>
         <asp:Button ID="CreateBookingBtn" runat="server" OnClick="CreateBookingBtn_Click" Text="Create Booking" UseSubmitBehavior="False" />
         </p>
+        <asp:Button ID="BtnHub" runat="server" OnClick="BtnHub_Click" Text="&lt; Hub" />
     </form>
 </body>
 </html>

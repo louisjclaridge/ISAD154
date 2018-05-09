@@ -62,5 +62,10 @@ namespace Isad154_project
         {
 
         }
+
+        protected void BtnHub_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Hub.aspx");
+        }
     }
 }
