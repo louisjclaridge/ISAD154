@@ -29,6 +29,7 @@ namespace Isad154_project.Classes
             lastName = customerLastName;
             dateOfBirth = customerDateOfBirth;
             address = customerAddress;
+            email = customerEmail;
             phoneNumber = customerPhoneNumber;
             listOfCars = customerListOfCars;
         }
