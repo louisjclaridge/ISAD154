@@ -30,6 +30,7 @@ namespace Isad154_project.Classes
             address = userAddress;
             email = userEmail;
             phoneNumber = userPhoneNumber;
+
         }
 
         public string getAllInfo()

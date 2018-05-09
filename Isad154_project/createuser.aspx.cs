@@ -41,9 +41,13 @@ namespace Isad154_project
             }
             if (accountType.Contains("Customer"))
             {
+                Classes.Car newCar = new Classes.Car("1", "Yes", "1998", "Ford", "Mustang", "Quite old", "26/04/16");
+                Classes.Car anotherNewCar = new Classes.Car("1", "Yes", "1998", "Ford", "Mustang", "Quite old", "26/04/16");
+                carlist.Add(newCar);
+                carlist.Add(anotherNewCar);
                 Classes.Customer newCustomer = new Classes.Customer(id, password, accountType, firstName, lastName, dateOfBirth, address, email, phoneNumber, carlist);
 
-                newCustomer.writeCustomerToJson();
+                newCustomer.writeToJson();
             }
 
             else if (accountType.Contains("Manager"))
