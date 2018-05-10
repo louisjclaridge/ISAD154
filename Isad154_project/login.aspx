@@ -32,9 +32,10 @@
         </p>
         <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
         <p>
-            <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="Submit" />
+            <br />
+            <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="Submit" CssClass="btn btn-dark"/>
         </p>
-        <asp:Label ID="lblSuccess" runat="server" Text="Label"></asp:Label>
+        <asp:Label ID="lblSuccess" runat="server" Text=""></asp:Label>
         </div>
     </div>
     </form>

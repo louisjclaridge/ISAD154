@@ -68,7 +68,7 @@ namespace Isad154_project
 
         public static List<Classes.Customer> getAllCustomers()
         {
-            using (StreamReader r = new StreamReader("F:/ISAD154/Isad154_project/App_Data/customers.json"))
+            using (StreamReader r = new StreamReader("/App_Data/customers.json"))
             {
                 string json = r.ReadToEnd();
 
