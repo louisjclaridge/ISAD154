@@ -1,0 +1,32 @@
+﻿[
+  {
+    "accountID": 1234,
+    "accountType": "Customer",
+    "firstName": "asd",
+    "lastName": "testerson",
+    "dateOfBirth": "12/10/12",
+    "address": "12 asd street",
+    "email": "test@test.com",
+    "phoneNumber": "cccccc"
+  },
+  {
+    "accountID": 8087,
+    "accountType": "Customer",
+    "firstName": "test",
+    "lastName": "testerson",
+    "dateOfBirth": "26/dwq/1998",
+    "address": "12 testing street",
+    "email": "mail@mail.asdaddd",
+    "phoneNumber": "018928asdasd9101"
+  },
+  {
+    "accountID": 10953,
+    "accountType": "asdccc",
+    "firstName": "test",
+    "lastName": "testerson",
+    "dateOfBirth": "26/04/1998",
+    "address": "12 zzxzx street",
+    "email": "test@assdass.com",
+    "phoneNumber": "0189289101"
+  }
+]
