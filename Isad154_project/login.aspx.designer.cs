@@ -22,20 +22,7 @@ namespace Isad154_project {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-<<<<<<< HEAD:Isad154_project/CreateCar.aspx.designer.cs
-        /// CarId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CarId;
-        
-        /// <summary>
-        /// carReg control.
-=======
         /// lblUserType control.
->>>>>>> 1b8db6ff9c45d636c02bcdcdb5763c597b3f9cc4:Isad154_project/login.aspx.designer.cs
         /// </summary>
         /// <remarks>
         /// Auto-generated field.

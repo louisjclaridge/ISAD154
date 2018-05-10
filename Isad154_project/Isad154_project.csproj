@@ -210,12 +210,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-<<<<<<< HEAD
-    <Content Include="App_Data\Car.json" />
-    <Content Include="App_Data\Booking.json" />
-    <Content Include="App_Data\users.json" />
-=======
->>>>>>> 1b8db6ff9c45d636c02bcdcdb5763c597b3f9cc4
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="login.aspx" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
@@ -252,12 +246,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
-<<<<<<< HEAD
-    <Content Include="StyleSheet.css" />
-    <Content Include="ViewBooking.aspx" />
-=======
     <Content Include="stylesheet.css" />
->>>>>>> 1b8db6ff9c45d636c02bcdcdb5763c597b3f9cc4
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -382,18 +371,12 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Classes\Booking.cs" />
     <Compile Include="Classes\Car.cs" />
     <Compile Include="Classes\Customer.cs" />
     <Compile Include="Classes\Staff.cs" />
     <Compile Include="Classes\User.cs" />
-<<<<<<< HEAD
-    <Compile Include="CreateBooking.aspx.cs">
-      <DependentUpon>CreateBooking.aspx</DependentUpon>
-=======
     <Compile Include="createuser.aspx.cs">
       <DependentUpon>createuser.aspx</DependentUpon>
->>>>>>> 1b8db6ff9c45d636c02bcdcdb5763c597b3f9cc4
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="createuser.aspx.designer.cs">
@@ -426,13 +409,6 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewBooking.aspx.cs">
-      <DependentUpon>ViewBooking.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ViewBooking.aspx.designer.cs">
-      <DependentUpon>ViewBooking.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -1,27 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-<<<<<<< HEAD
-using System.Linq;
-using System.Web;
-
-namespace Isad154_project.Classes
-{
-    public class Customer : User
-
-    {
-        public List<Car> myCars { get; set; }
-        public Customer(int userAccountID, string userAccountType, string userFirstName, string userLastName, string userDateOfBirth, string userAddress, string userEmail, string userPhoneNumber, List<Car> customerListOfCars) : base(userAccountID, userAccountType, userFirstName, userLastName, userDateOfBirth, userAddress, userEmail, userPhoneNumber)
-        {
-            myCars = customerListOfCars;
-
-        }
-        public string getAllInfo()
-        {
-            string output = Convert.ToString(accountID) + " " + accountType + " " + firstName + " " + lastName + " " + dateOfBirth + " " + address + " " + email + " " + phoneNumber + "This is a customer class";
-            return output;
-        }
-    }
-=======
 using Newtonsoft.Json;
 using System.Linq;
 using System.Web;
@@ -70,5 +48,4 @@ namespace Isad154_project.Classes
         }
     }
 
->>>>>>> 1b8db6ff9c45d636c02bcdcdb5763c597b3f9cc4
 }

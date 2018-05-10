@@ -1,23 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-<<<<<<< HEAD
-using System.Linq;
-using System.Web;
-
-namespace Isad154_project.Classes
-{
-    public class Staff : User
-    {
-        bool availability;
-        public Staff(int userAccountID, string userAccountType, string userFirstName, string userLastName, string userDateOfBirth, string userAddress, string userEmail, string userPhoneNumber, bool staffAvailability) : base(userAccountID, userAccountType, userFirstName, userLastName, userDateOfBirth, userAddress, userEmail, userPhoneNumber)
-        {
-            availability = staffAvailability;
-        }
-        public string getAllInfo()
-        {
-            string output = Convert.ToString(accountID) + " " + accountType + " " + firstName + " " + lastName + " " + dateOfBirth + " " + address + " " + email + " " + phoneNumber + "This is a staff class" + availability.ToString();
-            return output;
-=======
 using Newtonsoft.Json;
 using System.Linq;
 using System.Web;
@@ -62,7 +44,6 @@ namespace Isad154_project.Classes
                 newJson = JsonConvert.SerializeObject(items);
             }
             File.WriteAllText(@"F:/ISAD154/Isad154_project/App_Data/staff.Json", newJson);
->>>>>>> 1b8db6ff9c45d636c02bcdcdb5763c597b3f9cc4
         }
     }
 }
