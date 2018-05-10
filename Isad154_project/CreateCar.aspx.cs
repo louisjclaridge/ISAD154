@@ -14,7 +14,16 @@ namespace Isad154_project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                foreach (Car c in getAllCars())
+                {
+                    lstBoxCars.Items.Add(c.CarId);
+                    //lstBoxCars.SelectedIndex = 0;
+                }
+            }
+            
+           
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -87,6 +96,52 @@ namespace Isad154_project
             }
 
 
+        }
+
+        protected void lstBoxCars_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Car c = getAllCars()[lstBoxCars.SelectedIndex];
+            CarId.Text = c.CarId;
+            carReg.Text = c.CarReg;
+            carPersonal.Text = c.CarPersonal;
+            carYear.Text = c.CarYear;
+            carManufacture.Text = c.CarManufacture;
+            carModel.Text = c.CarModel;
+            carNotes.Text = c.CarNotes;
+            carLastMOT.Text = c.CarLastMOT;
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            //Turn this into one button combiened with create
+
+            Car c = getAllCars()[lstBoxCars.SelectedIndex];
+            c.CarId = CarId.Text;
+            c.CarReg = carReg.Text;
+            c.CarPersonal = carPersonal.Text;
+            c.CarYear = carYear.Text;
+            c.CarManufacture = carManufacture.Text;
+            c.CarModel = carModel.Text;
+            c.CarNotes = carNotes.Text;
+            c.CarLastMOT = carLastMOT.Text;
+            List<Car> cars = getAllCars();
+            cars[lstBoxCars.SelectedIndex] = c;
+            writeUpdateToJson(cars);
+            
+        }
+        private void writeUpdateToJson(List<Car> inputCars)
+        {
+            MessageBox.Show("Working");
+            List<Car> cars = inputCars;
+            string newJson;
+            using (StreamReader r = new StreamReader(@"C:/Users/Jack Parsons/Documents/GitHub/ISAD154/Isad154_project/App_Data/car.Json"))
+            {
+                
+                
+                
+                newJson = JsonConvert.SerializeObject(cars);
+            }
+            File.WriteAllText(@"C:/Users/Jack Parsons/Documents/GitHub/ISAD154/Isad154_project/App_Data/car.Json", newJson);
         }
     }
 }
