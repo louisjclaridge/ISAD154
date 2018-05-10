@@ -10,7 +10,7 @@
 namespace Isad154_project {
     
     
-    public partial class CreateCar {
+    public partial class login {
         
         /// <summary>
         /// form1 control.
@@ -22,6 +22,7 @@ namespace Isad154_project {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+<<<<<<< HEAD:Isad154_project/CreateCar.aspx.designer.cs
         /// CarId control.
         /// </summary>
         /// <remarks>
@@ -32,83 +33,77 @@ namespace Isad154_project {
         
         /// <summary>
         /// carReg control.
+=======
+        /// lblUserType control.
+>>>>>>> 1b8db6ff9c45d636c02bcdcdb5763c597b3f9cc4:Isad154_project/login.aspx.designer.cs
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox carReg;
+        protected global::System.Web.UI.WebControls.Label lblUserType;
         
         /// <summary>
-        /// carPersonal control.
+        /// drpSelectUserType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox carPersonal;
+        protected global::System.Web.UI.WebControls.DropDownList drpSelectUserType;
         
         /// <summary>
-        /// carYear control.
+        /// lblEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox carYear;
+        protected global::System.Web.UI.WebControls.Label lblEmail;
         
         /// <summary>
-        /// carManufacture control.
+        /// txtEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox carManufacture;
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
         
         /// <summary>
-        /// carModel control.
+        /// lblPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox carModel;
+        protected global::System.Web.UI.WebControls.Label lblPassword;
         
         /// <summary>
-        /// carNotes control.
+        /// txtPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox carNotes;
+        protected global::System.Web.UI.WebControls.TextBox txtPassword;
         
         /// <summary>
-        /// carLastMOT control.
+        /// btnSubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox carLastMOT;
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
         
         /// <summary>
-        /// Button1 control.
+        /// lblSuccess control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-        
-        /// <summary>
-        /// Button2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Label lblSuccess;
     }
 }

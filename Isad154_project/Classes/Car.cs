@@ -29,6 +29,7 @@ namespace Isad154_project.Classes
             CarNotes = theCarNotes;
             CarLastMOT = theCarLastMOT;
         }
+<<<<<<< HEAD
         public void writeToJson()
         {
 
@@ -43,9 +44,20 @@ namespace Isad154_project.Classes
             }
             File.WriteAllText(@"C:/Users/Jack Parsons/Documents/GitHub/ISAD154/Isad154_project/App_Data/car.Json", newJson);
 
+=======
+        //public void writeToJson()
+        //{
+        //    File.AppendAllText("C:/Users/Jack Parsons/Documents/GitHub/ISAD154/Isad154_project/App_Data/Car.json", JsonConvert.SerializeObject(this));
+        //    using (StreamWriter file = File.AppendText("C:/Users/Jack Parsons/Documents/GitHub/ISAD154/Isad154_project/App_Data/car.Json"))
+        //    {
+        //        JsonSerializer serializer = new JsonSerializer();
+        //        serializer.Serialize(file, this);
+        //    }
+>>>>>>> 1b8db6ff9c45d636c02bcdcdb5763c597b3f9cc4
 
 
-        }
+        //}
+
     }
 }
 
