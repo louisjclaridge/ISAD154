@@ -41,7 +41,7 @@ namespace Isad154_project
             }
             if (accountType.Contains("Customer"))
             {
-                Classes.Car newCar = new Classes.Car("", "", "", "", "", "", "");
+                Classes.Car newCar = new Classes.Car("", "", "", "", "", "", "","");
                 carlist.Add(newCar);
                 Classes.Customer newCustomer = new Classes.Customer(id, password, accountType, firstName, lastName, dateOfBirth, address, email, phoneNumber, carlist);
 

@@ -34,6 +34,11 @@ namespace Isad154_project.Classes
             listOfCars = customerListOfCars;
         }
 
+        public string getAllInfo()
+        {
+            string output = Convert.ToString(accountID) + " " + accountType + " " + firstName + " " + lastName + " " + dateOfBirth + " " + address + " " + email + " " + phoneNumber + "This is a customer class";
+            return output;
+        }
         public void writeToJson()
         {
             string newJson;

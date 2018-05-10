@@ -1,0 +1,14 @@
+[
+  {
+    "myCustomerID": "10953",
+    "myCarID": "123"
+  },
+  {
+    "myCustomerID": "123",
+    "myCarID": "aaaaaa"
+  },
+  {
+    "myCustomerID": "8087",
+    "myCarID": "jjj"
+  }
+]
