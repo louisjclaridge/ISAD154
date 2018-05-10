@@ -4,12 +4,16 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <title>Rusty Repairs | Create User</title>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-
+<img src="rustyrepairs.png" class="mx-auto d-block img-fluid" style="padding-top:1%;">
+<div id="container" class="mx-auto">
+<div id="hub-container" class="mx-auto col-sm" style="text-align:center">
     <asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label>
     <br>
     <asp:TextBox ID="txtEmail" runat="server" TextMode="Email"></asp:TextBox>
@@ -17,8 +21,8 @@
             <asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label>
             <br>
             <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
-            <%--test stuff later--%>
-            <asp:Button ID="btnGenerate" runat="server" OnClick="Button1_Click" Text="Generate Password" />
+    <br>
+            <asp:Button ID="btnGenerate" runat="server" OnClick="Button1_Click" Text="Generate Password" CssClass="btn btn-dark" />
     <br>
     <asp:Label ID="accountTypeLabel" runat="server" Text="Account Type"></asp:Label>
             <br />
@@ -47,7 +51,9 @@
     <br>
     <asp:TextBox ID="txtPhoneNumber" runat="server"></asp:TextBox>
             <br>
-     <asp:Button ID="Submit" runat="server" Text="Button" OnClick="Submit_Click" />
+     <asp:Button ID="Submit" runat="server" Text="Button" OnClick="Submit_Click" CssClass="btn btn-dark"/>
+        </div>
+    </div>
         </div>
     </form>
     </body>
