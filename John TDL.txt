@@ -1,4 +1,9 @@
+add notes
+
 create read workplan
+ -get car details
+ -get task details
+
 finish create workplan
   -add a way to check if workplan number is unique
   -change date to datetime or input validate? 
@@ -6,11 +11,14 @@ finish create workplan
 
 
 create update workplan
-- added a int selectedWorkplan that equals lstboxWorkplan
-- needs to output selected workplan to the boxes 
+ message on update
+ input validation
+maybe an are you sure button?
+
 finish read workplan
  =polish of the display formula , more spaces maybe
 ability to sort by in workplans
+
 finish read parts
   -create UI 
   -create JSON file

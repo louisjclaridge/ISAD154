@@ -22,6 +22,18 @@
 
      
           
+        <br />
+        <br />
+        workplan number:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="lblWorkplanNumber" runat="server" Text="Label"></asp:Label>
+        <br />
+        <br />
+        car details:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="lblCarDetails" runat="server" Text="Label"></asp:Label>
+        <br />
+
+     
+          
        <div><p>problem</p><asp:TextBox runat="server" ID="txtProblem" /></div> 
        <div><p>check in date</p><asp:TextBox runat="server" ID="txtCheckInDate" />&nbsp; </div>
         <div><p>due date</p><asp:TextBox runat="server" ID="txtDueDate" />
@@ -31,6 +43,11 @@
 
             <br />
         <br />
+        <asp:Label ID="lblStatus" runat="server" Text="Status"></asp:Label>
+&nbsp;<asp:DropDownList ID="ddlistStatus" runat="server">
+    <asp:ListItem Value="Active"> Active </asp:ListItem>
+    <asp:ListItem Value="Completed"> Completed </asp:ListItem>
+        </asp:DropDownList>
         <br />
 
             <br />
@@ -42,10 +59,12 @@
         
     
 
+        
+&nbsp;<asp:Button ID="btnUpdateWorkplan" runat="server" Text="update workplan" Width="113px" OnClick="btnUpdateWorkplan_Click" />
         <h1>Select Task</h1>
     <asp:ListBox runat="server" Width="1111px" ID="lstboxTask">
-        <asp:ListItem Text="text1" />
-        <asp:ListItem Text="text2" />
+        <asp:ListItem Text="Active"/>
+        <asp:ListItem Text="Completed"/>
     </asp:ListBox>
         
        <button id="btnAddNewWorkplan">Add Task to selected workplan</button>

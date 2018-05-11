@@ -143,15 +143,8 @@ public class Workplan
         }
         File.WriteAllText(@"C:\\Users\\Work\\Documents\\GitHub\\ISAD154\\Isad154_project\\App_Data\\workplan.json", newJson);
 
-    
-
-
-        
-
-
-
     }
-    public static List<Workplan> ReadWorkplan()
+    public static List<Workplan> getWorkplans()
     {
         using (StreamReader file = new StreamReader("C:\\Users\\Work\\Documents\\GitHub\\ISAD154\\Isad154_project\\App_Data\\workplan.json"))
         {
@@ -162,6 +155,18 @@ public class Workplan
             return items;
         }
 
+    }
+    public static void UpdateWorkplan(List<Workplan> workplanInput)
+    {
+        List<Workplan> workplan = workplanInput;
+        string newJson;
+
+        using (StreamReader newStream = new StreamReader(@"C:\\Users\\Work\\Documents\\GitHub\\ISAD154\\Isad154_project\\App_Data\\workplan.json"))
+        {
+            newJson = JsonConvert.SerializeObject(workplan);
+        }
+        File.WriteAllText(@"C:\\Users\\Work\\Documents\\GitHub\\ISAD154\\Isad154_project\\App_Data\\workplan.json", newJson);
+      
     }
     
     public string getWorkplanDisplayFormula()

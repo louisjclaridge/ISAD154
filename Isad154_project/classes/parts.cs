@@ -6,27 +6,27 @@ using System.Web;
 /// <summary>
 /// Summary description for parts
 /// </summary>
-public class parts
+public class Parts
 {
     string partName;
     decimal partPrice;
-    DateTime expectedDelivery; //(?)
+    string expectedDelivery; 
     string supplier;
     int purchaseOrderNumber;
     string returnReason;
-    DateTime returnDate;   //(?)
-    string returnConCode;
+    string returnDate;   
+    int returnConCode;
 
    
    
     //commodity
-    public parts(string inPartName, decimal inPartPrice )
+    public Parts(string inPartName, decimal inPartPrice )
     {
         partName = inPartName;
         partPrice = inPartPrice;
     }
     //specialised
-    public parts(string inPartName, decimal inPartPrice, DateTime inExpectedDelivery, string inSupplier, 
+    public Parts(string inPartName, decimal inPartPrice, DateTime inExpectedDelivery, string inSupplier, 
         int inPurchaseOrderNumber)
     {
         partName = inPartName;
@@ -36,7 +36,7 @@ public class parts
         purchaseOrderNumber = inPurchaseOrderNumber;
     }
     //returns
-    public parts(string inPartName, decimal inPartPrice, DateTime inExpectedDelivery, string inSupplier,
+    public Parts(string inPartName, decimal inPartPrice, DateTime inExpectedDelivery, string inSupplier,
        int inPurchaseOrderNumber, string inReturnReason, DateTime inReturnDate, string inReturnConCode)
     {
         partName = inPartName;

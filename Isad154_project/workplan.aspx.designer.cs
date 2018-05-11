@@ -31,6 +31,24 @@ namespace Isad154_project {
         protected global::System.Web.UI.WebControls.ListBox lstboxWorkplan;
         
         /// <summary>
+        /// lblWorkplanNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblWorkplanNumber;
+        
+        /// <summary>
+        /// lblCarDetails control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCarDetails;
+        
+        /// <summary>
         /// txtProblem control.
         /// </summary>
         /// <remarks>
@@ -67,6 +85,24 @@ namespace Isad154_project {
         protected global::System.Web.UI.WebControls.TextBox txtNotes;
         
         /// <summary>
+        /// lblStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblStatus;
+        
+        /// <summary>
+        /// ddlistStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlistStatus;
+        
+        /// <summary>
         /// btnCreateWorkplan control.
         /// </summary>
         /// <remarks>
@@ -74,6 +110,15 @@ namespace Isad154_project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCreateWorkplan;
+        
+        /// <summary>
+        /// btnUpdateWorkplan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUpdateWorkplan;
         
         /// <summary>
         /// lstboxTask control.
