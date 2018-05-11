@@ -27,14 +27,14 @@ namespace Isad154_project.Classes
         public void writeToJson()
         {
             string newJson;
-            using (StreamReader r = new StreamReader(@"F:/Webdev/SAD154/Isad154_project/App_Data/Booking.json"))
+            using (StreamReader r = new StreamReader(@"F:/ISAD154/Isad154_project/App_Data/Booking.Json"))
             {
                 string json = r.ReadToEnd();
                 List<Booking> items = JsonConvert.DeserializeObject<List<Booking>>(json);
                 items.Add(this);
                 newJson = JsonConvert.SerializeObject(items);
             }
-            File.WriteAllText(@"F:/Webdev/SAD154/Isad154_project/App_Data/Booking.json", newJson);
+            File.WriteAllText(@"F:/ISAD154/Isad154_project/App_Data//Booking.Json", newJson);
 
         }
 

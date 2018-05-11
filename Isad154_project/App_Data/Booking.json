@@ -1,14 +1,1 @@
-[
-  {
-    "myCustomerID": "10953",
-    "myCarID": "123"
-  },
-  {
-    "myCustomerID": "123",
-    "myCarID": "aaaaaa"
-  },
-  {
-    "myCustomerID": "8087",
-    "myCarID": "jjj"
-  }
-]
+[{"myCustomerID":"10953","myCarID":"123"},{"myCustomerID":"123","myCarID":"aaaaaa"},{"myCustomerID":"8087","myCarID":"jjj"},{"myCustomerID":"8349","myCarID":"aaaaaa"},{"myCustomerID":"8349","myCarID":"aaaaaa"},{"myCustomerID":"8349","myCarID":"aaaaaa"},{"myCustomerID":"8349","myCarID":"aaaaaa"},{"myCustomerID":"16457","myCarID":"aaaaaa"}]

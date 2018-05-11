@@ -3,6 +3,10 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace Isad154_project
 {
@@ -35,7 +39,7 @@ namespace Isad154_project
                 List<string> st = new List<string>();
                 foreach (Customer u in users)
                 {
-                    st.Add(u.accountID.ToString() + "" + u.firstName + "" + u.lastName);
+                    st.Add(u.accountID.ToString());
                 }
                 DropDownCustomer.DataSource = st;
                 DropDownCustomer.DataBind();
@@ -64,7 +68,7 @@ namespace Isad154_project
         }
         public static List<Booking> getAllBooking()
         {
-            using (StreamReader r = new StreamReader("F:/Webdev/ISAD154/Isad154_project/App_Data/Booking.json"))
+            using (StreamReader r = new StreamReader("F:/ISAD154/Isad154_project/App_Data/Booking.json"))
             {
 
                 string json = r.ReadToEnd();
