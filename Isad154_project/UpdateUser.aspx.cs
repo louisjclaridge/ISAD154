@@ -21,6 +21,16 @@ namespace Isad154_project
                 }
             }
         }
+
+        public void outputUsers()
+        {
+            lstUsers.Items.Clear();
+
+                foreach (Classes.User u in getAllUsers())
+                {
+                    lstUsers.Items.Add(u.accountID + " " + u.firstName + " " + u.lastName);
+                }
+        }
         public static List<Classes.User> getAllUsers()
         {
             using (StreamReader r = new StreamReader("F:/ISAD154/Isad154_project/App_Data/users.json"))
@@ -52,17 +62,18 @@ namespace Isad154_project
         {
                    Classes.User user = getAllUsers()[lstUsers.SelectedIndex];
 
-                   user.email = txtEmail.Text;
-                   user.password = txtPassword.Text;
-                   user.firstName = txtFirstName.Text;
-                   user.lastName = txtLastName.Text;
-                   user.dateOfBirth = txtDateOfBirth.Text;
-                   user.address = txtAddress.Text;
-                   user.phoneNumber = txtPhoneNumber.Text;
-                   List<Classes.User> users = getAllUsers();
-                   users[lstUsers.SelectedIndex] = user;
-                   writeUpdateToJson(users);
-            
+            user.email = txtEmail.Text;
+            user.password = txtPassword.Text;
+            user.firstName = txtFirstName.Text;
+            user.lastName = txtLastName.Text;
+            user.dateOfBirth = txtDateOfBirth.Text;
+            user.address = txtAddress.Text;
+            user.phoneNumber = txtPhoneNumber.Text;
+            List<Classes.User> users = getAllUsers();
+            users[lstUsers.SelectedIndex] = user;
+            writeUpdateToJson(users);
+
+            outputUsers();
             }
 
         private void writeUpdateToJson(List<Classes.User> inputUser)
