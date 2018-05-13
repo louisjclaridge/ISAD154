@@ -12,17 +12,21 @@ namespace Isad154_project.Classes
 
         //public Customer myCustomer { get; set; }
         //public Car myCar { get; set; }
+        public string myBookingID { get; set; }
         public string myCustomerID { get; set; }
         public string myCarID { get; set; }
+        public string myStatus { get; set; }
         //public Booking(Customer customer, Car car)
         //{
         //    myCustomer = customer;
         //    myCar = car;
         //}
-        public Booking(string customerID, string carId)
+        public Booking(string bookingID,string customerID, string carId, string bookingStatus)
         {
+            myBookingID = bookingID;
             myCustomerID = customerID;
             myCarID = carId;
+            myStatus = bookingStatus;
         }
         public void writeToJson()
         {

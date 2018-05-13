@@ -9,6 +9,14 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:ListBox ID="ListBox1" runat="server"></asp:ListBox>
+            <br />
+            <br />
+            <br />
+            <asp:Label ID="Label1" runat="server" Text="Booking ID"></asp:Label>
+            <br />
+            <asp:TextBox ID="txtBookingID" runat="server"></asp:TextBox>
+            <br />
             Pick customer</div>
         <asp:DropDownList ID="DropDownCustomer" runat="server">
         </asp:DropDownList>

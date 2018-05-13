@@ -1,14 +1,1 @@
-[
-  {
-    "myCustomerID": "10953",
-    "myCarID": "123"
-  },
-  {
-    "myCustomerID": "123",
-    "myCarID": "aaaaaa"
-  },
-  {
-    "myCustomerID": "8087",
-    "myCarID": "jjj"
-  }
-]
+[{"myBookingID":"123","myCustomerID":"10953","myCarID":"123","myStatus":"Alive"},{"myBookingID":"616","myCustomerID":"10953","myCarID":"123","myStatus":"Complete"},{"myBookingID":"321","myCustomerID":"1234","myCarID":"jjj","myStatus":"asd"},{"myBookingID":"iii5","myCustomerID":"8087","myCarID":"nc","myStatus":"Alive"}]

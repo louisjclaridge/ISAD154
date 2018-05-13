@@ -21,7 +21,7 @@ namespace Isad154_project
 
         protected void BtnViewBooking_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ViewBooking.aspx");
+            Response.Redirect("ViewBookingFix.aspx");
         }
     }
 }

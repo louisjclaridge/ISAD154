@@ -58,7 +58,7 @@ namespace Isad154_project
             //Get selcted customer
             //get selected car
             //add to booking
-            Booking booking = new Booking(DropDownCustomer.SelectedItem.ToString(),DropDownCar.SelectedItem.ToString());
+            Booking booking = new Booking(txtBookingID.Text.ToString(), DropDownCustomer.SelectedItem.ToString(),DropDownCar.SelectedItem.ToString(), "Alive");
             MessageBox.Show(DropDownCustomer.SelectedItem.ToString(), DropDownCar.SelectedItem.ToString());
             booking.writeToJson();
         }

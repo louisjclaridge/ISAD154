@@ -252,7 +252,7 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="StyleSheet.css" />
-    <Content Include="ViewBooking.aspx" />
+    <Content Include="ViewBookingFix.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -423,12 +423,12 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewBooking.aspx.cs">
-      <DependentUpon>ViewBooking.aspx</DependentUpon>
+    <Compile Include="ViewBookingFix.aspx.cs">
+      <DependentUpon>ViewBookingFix.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ViewBooking.aspx.designer.cs">
-      <DependentUpon>ViewBooking.aspx</DependentUpon>
+    <Compile Include="ViewBookingFix.aspx.designer.cs">
+      <DependentUpon>ViewBookingFix.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
