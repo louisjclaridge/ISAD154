@@ -1,15 +1,16 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.IO;
+using Newtonsoft.Json;
 using System.Linq;
 using System.Web;
+using System.IO;
 
 namespace Isad154_project.Classes
 {
-    public class User
+    public class Manager
     {
-        public int accountID { get; set; }
+        public string accountID { get; set; }
+        public string password { get; set; }
         public string accountType { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
@@ -18,9 +19,10 @@ namespace Isad154_project.Classes
         public string email { get; set; }
         public string phoneNumber { get; set; }
 
-        public User(int userAccountID, string userAccountType, string userFirstName, string userLastName, string userDateOfBirth, string userAddress, string userEmail, string userPhoneNumber)
+        public Manager(string userAccountID, string userPassword, string userAccountType, string userFirstName, string userLastName, string userDateOfBirth, string userAddress, string userEmail, string userPhoneNumber)
         {
             accountID = userAccountID;
+            password = userPassword;
             accountType = userAccountType;
             firstName = userFirstName;
             lastName = userLastName;
@@ -28,6 +30,7 @@ namespace Isad154_project.Classes
             address = userAddress;
             email = userEmail;
             phoneNumber = userPhoneNumber;
+
         }
 
         public string getAllInfo()
@@ -35,6 +38,19 @@ namespace Isad154_project.Classes
             string output = Convert.ToString(accountID) + " " + accountType + " " + firstName + " " + lastName + " " + dateOfBirth + " " + address + " " + email + " " + phoneNumber;
 
             return output;
+        }
+
+        public void writeUserToJson()
+        {
+            string newJson;
+            using (StreamReader r = new StreamReader(@"F:/ISAD154/Isad154_project/App_Data/managers.json"))
+            {
+                string json = r.ReadToEnd();
+                List<Manager> items = JsonConvert.DeserializeObject<List<Manager>>(json);
+                items.Add(this);
+                newJson = JsonConvert.SerializeObject(items);
+            }
+            File.WriteAllText(@"F:/ISAD154/Isad154_project/App_Data/managers.json", newJson);
         }
     }
 }

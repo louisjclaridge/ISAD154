@@ -81,15 +81,15 @@ namespace Isad154_project
         //SHOULD BE IN LOUIS CREATE USER PAGE
         //********************************************
         //********************************************
-        public static List<User> getAllUsers()
+        public static List<Customer> getAllUsers()
         {
-            using (StreamReader r = new StreamReader("C:/Users/Jack Parsons/Documents/GitHub/ISAD154/Isad154_project/App_Data/users.json"))
+            using (StreamReader r = new StreamReader("C:/Users/Jack Parsons/Documents/GitHub/ISAD154/Isad154_project/App_Data/customers.json"))
             {
 
                 string json = r.ReadToEnd();
 
 
-                List<User> items = JsonConvert.DeserializeObject<List<User>>(json);
+                List<Customer> items = JsonConvert.DeserializeObject<List<Customer>>(json);
                 return items;
 
 

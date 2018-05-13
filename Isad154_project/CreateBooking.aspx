@@ -18,7 +18,7 @@
             <asp:TextBox ID="txtBookingID" runat="server"></asp:TextBox>
             <br />
             Pick customer</div>
-        <asp:DropDownList ID="DropDownCustomer" runat="server">
+        <asp:DropDownList ID="DropDownCustomer" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownCustomer_SelectedIndexChanged">
         </asp:DropDownList>
         <p>
             <asp:Button ID="CreateCustomerBtn" runat="server" Text="Create Customer" />

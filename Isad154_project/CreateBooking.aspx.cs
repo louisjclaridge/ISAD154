@@ -20,30 +20,23 @@ namespace Isad154_project
             //this.Form.Target = "_blank";//Open new page
             if (!IsPostBack)
             {
-                List<Car> cars = CreateCar.getAllCars();//Change to only the customers car
-                List<string> s = new List<string>();
-                foreach (Car c in cars)
-                {
-                    s.Add(c.CarId);
-
-                }
-                DropDownCar.DataSource = s;
-                DropDownCar.DataBind();
-                //List<Customer> customers = Classes.User.getAllInfo();
-
-                carss = cars;
+                
 
 
 
 
-                List<User> users = CreateCar.getAllUsers();
+                List<Customer> customers = CreateCar.getAllUsers();
                 List<string> st = new List<string>();
-                foreach (User u in users)
+                foreach (Customer C in customers)
                 {
-                    st.Add(u.accountID.ToString());
+                    st.Add(C.accountID.ToString());
                 }
                 DropDownCustomer.DataSource = st;
                 DropDownCustomer.DataBind();
+
+                //List<Customer> customers = Classes.User.getAllInfo();
+
+             
             }
             
         }
@@ -87,6 +80,30 @@ namespace Isad154_project
         protected void BtnHub_Click(object sender, EventArgs e)
         {
             Response.Redirect("Hub.aspx");
+        }
+
+        protected void DropDownCustomer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            List<Car> cars = CreateCar.getAllCars();//Change to only the customers car
+            List<Customer> customers = CreateCar.getAllUsers();
+            Customer currentCustomer = customers[0];
+            foreach (Customer c in customers)
+            {
+                if (c.accountID == DropDownCustomer.SelectedValue.ToString())
+                {
+                    currentCustomer = c;
+                }
+            }
+            List<string> s = new List<string>();
+            foreach (Car c in currentCustomer.listOfCars)
+            {
+                s.Add(c.CarId);
+
+            }
+            DropDownCar.DataSource = s;
+            DropDownCar.DataBind();
+            carss = cars;
         }
     }
 }

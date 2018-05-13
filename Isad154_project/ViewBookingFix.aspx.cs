@@ -36,16 +36,16 @@ namespace Isad154_project
         {
             if (IsPostBack)
             {
-                List<User> users = CreateCar.getAllUsers();
+                List<Customer> customers = CreateCar.getAllUsers();
                 List<Car> cars = CreateCar.getAllCars();
                 List<Booking> bookings = CreateBooking.getAllBooking();
                 Booking book = getCurrentBooking();
 
-                foreach (User us in users)
+                foreach (Customer c in customers)
                 {
-                    if (us.accountID.ToString() == book.myCustomerID)
+                    if (c.accountID.ToString() == book.myCustomerID)
                     {
-                        lblUser.Text = us.getAllInfo();
+                        lblUser.Text = c.getAllInfo();
                     }
                 }
                 foreach (Car c in cars)
