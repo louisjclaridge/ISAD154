@@ -13,36 +13,48 @@ namespace Isad154_project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                foreach (Classes.Staff s in getAllStaff())
-                {
-                    lstUsers.Items.Add(s.accountID);
-                }
-            }
+
+            checkUserType();
         }
 
         protected void drpSelectUserType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (drpSelectUserType.SelectedItem.Value == "Staff")
+            checkUserType();
+        }
+
+        public void checkUserType()
+        {
+            if (drpSelectUserType.SelectedItem.Text.Contains("Staff"))
             {
-                getAllStaff();
+                lstUsers.Items.Clear();
+                foreach (Classes.Staff s in getAllStaff())
+                {
+                    lstUsers.Items.Add(s.accountID + " " + s.firstName + " " + s.lastName);
+                }
             }
 
-            if (drpSelectUserType.SelectedItem.Value == "Customer")
+            else if (drpSelectUserType.SelectedItem.Text.Contains("Customer"))
             {
-                getAllCustomers();
+                lstUsers.Items.Clear();
+                foreach (Classes.Customer c in getAllCustomers())
+                {
+                    lstUsers.Items.Add(c.accountID + " " + c.firstName + " " + c.lastName);
+                }
             }
 
-            if (drpSelectUserType.SelectedItem.Value == "Manager")
+            else if (drpSelectUserType.SelectedItem.Text.Contains("Manager"))
             {
-                getAllManagers();
+                lstUsers.Items.Clear();
+                foreach (Classes.Manager m in getAllManagers())
+                {
+                    lstUsers.Items.Add(m.accountID + " " + m.firstName + " " + m.lastName);
+                }
             }
         }
 
         public static List<Classes.Customer> getAllCustomers()
         {
-            using (StreamReader r = new StreamReader("F:/ISAD154/Isad154_project/App_Data/customer.json"))
+            using (StreamReader r = new StreamReader("F:/ISAD154/Isad154_project/App_Data/customers.json"))
             {
                 string json = r.ReadToEnd();
 
@@ -82,44 +94,46 @@ namespace Isad154_project
 
         protected void lstUsers_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (drpSelectUserType.SelectedItem.Value.Contains("Staff"))
+            if (!IsPostBack)
             {
-                Classes.Staff staff = getAllStaff()[lstUsers.SelectedIndex];
+                if (drpSelectUserType.SelectedItem.Value.Contains("Staff"))
+                {
+                    Classes.Staff staff = getAllStaff()[lstUsers.SelectedIndex];
 
-                txtEmail.Text = staff.email;
-                txtPassword.Text = staff.password;
-                txtFirstName.Text = staff.firstName;
-                txtLastName.Text = staff.lastName;
-                txtDateOfBirth.Text = staff.dateOfBirth;
-                txtAddress.Text = staff.address;
-                txtPhoneNumber.Text = staff.phoneNumber;
+                    txtEmail.Text = staff.email;
+                    txtPassword.Text = staff.password;
+                    txtFirstName.Text = staff.firstName;
+                    txtLastName.Text = staff.lastName;
+                    txtDateOfBirth.Text = staff.dateOfBirth;
+                    txtAddress.Text = staff.address;
+                    txtPhoneNumber.Text = staff.phoneNumber;
+                }
 
-            }
+                if (drpSelectUserType.SelectedItem.Value.Contains("Customer"))
+                {
+                    Classes.Customer customer = getAllCustomers()[lstUsers.SelectedIndex];
 
-            if (drpSelectUserType.SelectedItem.Value.Contains("Customer"))
-            {
-               Classes.Customer customer = getAllCustomers()[lstUsers.SelectedIndex];
+                    txtEmail.Text = customer.email;
+                    txtPassword.Text = customer.password;
+                    txtFirstName.Text = customer.firstName;
+                    txtLastName.Text = customer.lastName;
+                    txtDateOfBirth.Text = customer.dateOfBirth;
+                    txtAddress.Text = customer.address;
+                    txtPhoneNumber.Text = customer.phoneNumber;
+                }
 
-                txtEmail.Text = customer.email;
-                txtPassword.Text = customer.password;
-                txtFirstName.Text = customer.firstName;
-                txtLastName.Text = customer.lastName;
-                txtDateOfBirth.Text = customer.dateOfBirth;
-                txtAddress.Text = customer.address;
-                txtPhoneNumber.Text = customer.phoneNumber;
-            }
+                if (drpSelectUserType.SelectedItem.Value.Contains("Manager"))
+                {
+                    Classes.Manager manager = getAllManagers()[lstUsers.SelectedIndex];
 
-            if (drpSelectUserType.SelectedItem.Value.Contains("Manager"))
-            {
-              Classes.Manager manager = getAllManagers()[lstUsers.SelectedIndex];
-
-                txtEmail.Text = manager.email;
-                txtPassword.Text = manager.password;
-                txtFirstName.Text = manager.firstName;
-                txtLastName.Text = manager.lastName;
-                txtDateOfBirth.Text = manager.dateOfBirth;
-                txtAddress.Text = manager.address;
-                txtPhoneNumber.Text = manager.phoneNumber;
+                    txtEmail.Text = manager.email;
+                    txtPassword.Text = manager.password;
+                    txtFirstName.Text = manager.firstName;
+                    txtLastName.Text = manager.lastName;
+                    txtDateOfBirth.Text = manager.dateOfBirth;
+                    txtAddress.Text = manager.address;
+                    txtPhoneNumber.Text = manager.phoneNumber;
+                }
             }
         }
 

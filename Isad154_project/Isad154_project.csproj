@@ -215,8 +215,8 @@
     <Content Include="App_Data\Car.json" />
     <Content Include="App_Data\customers.json" />
     <Content Include="App_Data\staff.json" />
-    <Content Include="App_Data\users.json" />
     <Content Include="App_Data\Booking.json" />
+    <Content Include="App_Data\managers.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Hub.aspx" />
     <Content Include="login.aspx" />

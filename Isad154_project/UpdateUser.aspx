@@ -19,15 +19,15 @@
 <div id="hub-container" class="mx-auto col-sm" style="text-align:center">
     <asp:Label ID="lblSelectUserType" runat="server" Text="SelectUserType"></asp:Label>
     <br />
-    <asp:DropDownList ID="drpSelectUserType" runat="server" OnSelectedIndexChanged="drpSelectUserType_SelectedIndexChanged">
-        <asp:ListItem>Staff</asp:ListItem>
+    <asp:DropDownList ID="drpSelectUserType" runat="server" OnSelectedIndexChanged="drpSelectUserType_SelectedIndexChanged" AutoPostBack="True">
         <asp:ListItem>Customer</asp:ListItem>
+        <asp:ListItem>Staff</asp:ListItem>
         <asp:ListItem>Manager</asp:ListItem>
     </asp:DropDownList>
     <br />
     <asp:Label ID="lblSelectUsers" runat="server" Text="Select A User"></asp:Label>
     <br />
-    <asp:ListBox ID="lstUsers" runat="server" Width="310px" OnSelectedIndexChanged="lstUsers_SelectedIndexChanged"></asp:ListBox>
+    <asp:ListBox ID="lstUsers" runat="server" Width="310px" OnSelectedIndexChanged="lstUsers_SelectedIndexChanged" AutoPostBack="True"></asp:ListBox>
     <br />
     <asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label>
     <br>
