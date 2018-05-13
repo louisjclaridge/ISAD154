@@ -51,7 +51,7 @@ namespace Isad154_project
             }
             else if (drpSelectUserType.SelectedItem.Text.Contains("Manager"))
             {
-                foreach (Classes.User a in getAllUser())
+                foreach (Classes.Manager a in getAllManagers())
                 {
                     if (a.password == txtPassword.Text && a.email == txtEmail.Text)
                     {
@@ -81,7 +81,6 @@ namespace Isad154_project
 
         public List<Classes.Staff> getAllStaff()
         {
-            string userType = "Customer";
             using (StreamReader r = new StreamReader("F:/ISAD154/Isad154_project/App_Data/staff.json"))
             {
                 string json = r.ReadToEnd();
@@ -94,14 +93,13 @@ namespace Isad154_project
 
         }
 
-        public static List<Classes.User> getAllUser()
+        public static List<Classes.Manager> getAllManagers()
         {
-            string userType = "Customer";
-            using (StreamReader r = new StreamReader("F:/ISAD154/Isad154_project/App_Data/users.json"))
+            using (StreamReader r = new StreamReader("F:/ISAD154/Isad154_project/App_Data/managers.json"))
             {
                 string json = r.ReadToEnd();
 
-                List<Classes.User> items = JsonConvert.DeserializeObject<List<Classes.User>>(json);
+                List<Classes.Manager> items = JsonConvert.DeserializeObject<List<Classes.Manager>>(json);
                 return items;
 
 

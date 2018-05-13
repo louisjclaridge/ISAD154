@@ -50,7 +50,7 @@ namespace Isad154_project
 
             else if (accountType.Contains("Manager"))
             {
-                Classes.User newUser = new Classes.User(id, password, accountType, firstName, lastName, dateOfBirth, address, email, phoneNumber);
+                Classes.Manager newUser = new Classes.Manager(id, password, accountType, firstName, lastName, dateOfBirth, address, email, phoneNumber);
 
                 newUser.writeUserToJson();
             }

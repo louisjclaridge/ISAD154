@@ -255,6 +255,7 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="stylesheet.css" />
+    <Content Include="UpdateUser.aspx" />
     <Content Include="ViewBooking.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -384,7 +385,7 @@
     <Compile Include="Classes\Car.cs" />
     <Compile Include="Classes\Customer.cs" />
     <Compile Include="Classes\Staff.cs" />
-    <Compile Include="Classes\User.cs" />
+    <Compile Include="Classes\Manager.cs" />
     <Compile Include="CreateBooking.aspx.cs">
       <DependentUpon>CreateBooking.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -440,6 +441,13 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="UpdateUser.aspx.cs">
+      <DependentUpon>UpdateUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateUser.aspx.designer.cs">
+      <DependentUpon>UpdateUser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewBooking.aspx.cs">
       <DependentUpon>ViewBooking.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

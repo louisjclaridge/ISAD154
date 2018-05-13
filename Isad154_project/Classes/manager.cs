@@ -7,7 +7,7 @@ using System.IO;
 
 namespace Isad154_project.Classes
 {
-    public class User
+    public class Manager
     {
         public string accountID { get; set; }
         public string password { get; set; }
@@ -19,7 +19,7 @@ namespace Isad154_project.Classes
         public string email { get; set; }
         public string phoneNumber { get; set; }
 
-        public User(string userAccountID, string userPassword, string userAccountType, string userFirstName, string userLastName, string userDateOfBirth, string userAddress, string userEmail, string userPhoneNumber)
+        public Manager(string userAccountID, string userPassword, string userAccountType, string userFirstName, string userLastName, string userDateOfBirth, string userAddress, string userEmail, string userPhoneNumber)
         {
             accountID = userAccountID;
             password = userPassword;
@@ -43,14 +43,14 @@ namespace Isad154_project.Classes
         public void writeUserToJson()
         {
             string newJson;
-            using (StreamReader r = new StreamReader(@"F:/ISAD154/Isad154_project/App_Data/users.json"))
+            using (StreamReader r = new StreamReader(@"F:/ISAD154/Isad154_project/App_Data/managers.json"))
             {
                 string json = r.ReadToEnd();
-                List<User> items = JsonConvert.DeserializeObject<List<User>>(json);
+                List<Manager> items = JsonConvert.DeserializeObject<List<Manager>>(json);
                 items.Add(this);
                 newJson = JsonConvert.SerializeObject(items);
             }
-            File.WriteAllText(@"F:/ISAD154/Isad154_project/App_Data/users.Json", newJson);
+            File.WriteAllText(@"F:/ISAD154/Isad154_project/App_Data/managers.json", newJson);
         }
     }
 }
