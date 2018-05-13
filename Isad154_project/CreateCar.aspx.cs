@@ -80,7 +80,7 @@ namespace Isad154_project
         //SHOULD BE IN LOUIS CREATE USER PAGE
         //********************************************
         //********************************************
-        public static List<Customer> getAllUsers()
+        public static List<User> getAllUsers()
         {
             using (StreamReader r = new StreamReader("F:/ISAD154/Isad154_project/App_Data/customers.json"))
             {
@@ -88,7 +88,7 @@ namespace Isad154_project
                 string json = r.ReadToEnd();
 
 
-                List<Customer> items = JsonConvert.DeserializeObject<List<Customer>>(json);
+                List<User> items = JsonConvert.DeserializeObject<List<User>>(json);
                 return items;
 
 

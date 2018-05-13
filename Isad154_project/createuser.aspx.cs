@@ -31,29 +31,12 @@ namespace Isad154_project
             address = txtAddress.Text;
             phoneNumber = txtPhoneNumber.Text;
             List<Classes.Car> carlist = new List<Classes.Car>();
+            availability = true;
 
-            if (accountType.Contains("Staff"))
-            {
-                availability = true;
-                Classes.Staff newStaff = new Classes.Staff(id, password, accountType, firstName, lastName, dateOfBirth, address, email, phoneNumber, availability);
 
-                newStaff.writeStaffToJson();
-            }
-            if (accountType.Contains("Customer"))
-            {
-                Classes.Car newCar = new Classes.Car("", "", "", "", "", "", "","");
-                carlist.Add(newCar);
-                Classes.Customer newCustomer = new Classes.Customer(id, password, accountType, firstName, lastName, dateOfBirth, address, email, phoneNumber, carlist);
+            Classes.User newUser = new Classes.User(id, password, accountType, firstName, lastName, dateOfBirth, address, email, phoneNumber, carlist, availability);
 
-                newCustomer.writeToJson();
-            }
-
-            else if (accountType.Contains("Manager"))
-            {
-                Classes.Manager newUser = new Classes.Manager(id, password, accountType, firstName, lastName, dateOfBirth, address, email, phoneNumber);
-
-                newUser.writeUserToJson();
-            }
+            newUser.writeToJson();
         }
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {

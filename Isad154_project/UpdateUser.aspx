@@ -17,13 +17,6 @@
         
 <div id="container" class="mx-auto">
 <div id="hub-container" class="mx-auto col-sm" style="text-align:center">
-    <asp:Label ID="lblSelectUserType" runat="server" Text="SelectUserType"></asp:Label>
-    <br />
-    <asp:DropDownList ID="drpSelectUserType" runat="server" OnSelectedIndexChanged="drpSelectUserType_SelectedIndexChanged" AutoPostBack="True">
-        <asp:ListItem>Customer</asp:ListItem>
-        <asp:ListItem>Staff</asp:ListItem>
-        <asp:ListItem>Manager</asp:ListItem>
-    </asp:DropDownList>
     <br />
     <asp:Label ID="lblSelectUsers" runat="server" Text="Select A User"></asp:Label>
     <br />

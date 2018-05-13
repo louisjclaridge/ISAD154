@@ -38,12 +38,12 @@ namespace Isad154_project
 
             if (IsPostBack)
             {
-                List<Customer> users = CreateCar.getAllUsers();
+                List<User> users = CreateCar.getAllUsers();
                 List<Car> cars = CreateCar.getAllCars();
                 String selectedBooking = DropDownBookings.SelectedItem.Value;
 
 
-                foreach (Customer us in users)
+                foreach (User us in users)
                 {
                     if (us.accountID.ToString() == selectedBooking)
                     {

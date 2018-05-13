@@ -35,9 +35,9 @@ namespace Isad154_project
 
 
 
-                List<Customer> users = CreateCar.getAllUsers();
+                List<User> users = CreateCar.getAllUsers();
                 List<string> st = new List<string>();
-                foreach (Customer u in users)
+                foreach (User u in users)
                 {
                     st.Add(u.accountID.ToString());
                 }

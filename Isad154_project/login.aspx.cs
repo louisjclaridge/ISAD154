@@ -19,87 +19,26 @@ namespace Isad154_project
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-
-            if (drpSelectUserType.SelectedItem.Text.Contains("Customer"))
+            foreach (Classes.User a in getAllUsers())
             {
-
-                foreach (Classes.Customer a in getAllCustomers())
+                if (a.password == txtPassword.Text && a.email == txtEmail.Text)
                 {
-                    if (a.password == txtPassword.Text && a.email == txtEmail.Text)
-                    {
-                        lblSuccess.Text = "Login Successful";
-                    }
-                    else
-                    {
-                        lblSuccess.Text = "Login Unsuccessful";
-                    }
+                    lblSuccess.Text = "Login Successful";
                 }
-            }
-            else if (drpSelectUserType.SelectedItem.Text.Contains("Staff"))
-            {
-                foreach (Classes.Staff a in getAllStaff())
+                else
                 {
-                    if (a.password == txtPassword.Text && a.email == txtEmail.Text)
-                    {
-                        lblSuccess.Text = "Login Successful";
-                    }
-                    else
-                    {
-                        lblSuccess.Text = "Login Unsuccessful";
-                    }
+                    lblSuccess.Text = "Login Unsuccessful";
                 }
-            }
-            else if (drpSelectUserType.SelectedItem.Text.Contains("Manager"))
-            {
-                foreach (Classes.Manager a in getAllManagers())
-                {
-                    if (a.password == txtPassword.Text && a.email == txtEmail.Text)
-                    {
-                        lblSuccess.Text = "Login Successful";
-                    }
-                    else
-                    {
-                        lblSuccess.Text = "Login Unsuccessful";
-                    }
-                }
-            }
-
-        }
-
-        public static List<Classes.Customer> getAllCustomers()
-        {
-            using (StreamReader r = new StreamReader("/App_Data/customers.json"))
-            {
-                string json = r.ReadToEnd();
-
-                List<Classes.Customer> items = JsonConvert.DeserializeObject<List<Classes.Customer>>(json);
-                return items;
-
-
             }
         }
 
-        public List<Classes.Staff> getAllStaff()
+        public static List<Classes.User> getAllUsers()
         {
-            using (StreamReader r = new StreamReader("F:/ISAD154/Isad154_project/App_Data/staff.json"))
+            using (StreamReader r = new StreamReader("F:/ISAD154/Isad154_project/App_Data/users.json"))
             {
                 string json = r.ReadToEnd();
 
-                List<Classes.Staff> items = JsonConvert.DeserializeObject<List<Classes.Staff>>(json);
-                return items;
-
-
-            }
-
-        }
-
-        public static List<Classes.Manager> getAllManagers()
-        {
-            using (StreamReader r = new StreamReader("F:/ISAD154/Isad154_project/App_Data/managers.json"))
-            {
-                string json = r.ReadToEnd();
-
-                List<Classes.Manager> items = JsonConvert.DeserializeObject<List<Classes.Manager>>(json);
+                List<Classes.User> items = JsonConvert.DeserializeObject<List<Classes.User>>(json);
                 return items;
 
 

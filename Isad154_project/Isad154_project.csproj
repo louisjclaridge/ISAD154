@@ -213,10 +213,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="App_Data\Car.json" />
-    <Content Include="App_Data\customers.json" />
-    <Content Include="App_Data\staff.json" />
     <Content Include="App_Data\Booking.json" />
-    <Content Include="App_Data\managers.json" />
+    <Content Include="App_Data\users.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Hub.aspx" />
     <Content Include="login.aspx" />
@@ -383,9 +381,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Classes\Booking.cs" />
     <Compile Include="Classes\Car.cs" />
-    <Compile Include="Classes\Customer.cs" />
-    <Compile Include="Classes\Staff.cs" />
-    <Compile Include="Classes\Manager.cs" />
+    <Compile Include="Classes\User.cs" />
     <Compile Include="CreateBooking.aspx.cs">
       <DependentUpon>CreateBooking.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
