@@ -13,5 +13,15 @@ namespace Isad154_project
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CreateBooking.aspx");
+        }
+
+        protected void BtnViewBooking_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ViewBookingFix.aspx");
+        }
     }
 }

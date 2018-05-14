@@ -9,7 +9,7 @@ namespace Isad154_project.Classes
 {
     public class Car
     {
-
+        public string CarId { get; set; }
         public string CarReg { get; set; }
         public string CarPersonal { get; set; } // should be bool
         public string CarYear { get; set; }
@@ -18,8 +18,9 @@ namespace Isad154_project.Classes
         public string CarNotes { get; set; }
         public string CarLastMOT { get; set; } // should be datetime
 
-        public Car(string theCarReg, String theCarPersonal, string theCarYear, string theCarManufacture, string theCarModel, string theCarNotes, string theCarLastMOT)
+        public Car(string theCarID,string theCarReg, string theCarPersonal, string theCarYear, string theCarManufacture, string theCarModel, string theCarNotes, string theCarLastMOT)
         {
+            CarId = theCarID;//Create this randomly
             CarReg = theCarReg;
             CarPersonal = theCarPersonal;
             CarYear = theCarYear;
@@ -30,12 +31,18 @@ namespace Isad154_project.Classes
         }
         public void writeToJson()
         {
-            // File.AppendAllText("C:/Users/Jack Parsons/Documents/GitHub/ISAD154/Isad154_project/App_Data/Car.json", JsonConvert.SerializeObject(this));
-            using (StreamWriter file = File.AppendText("C:/Users/Jack Parsons/Documents/GitHub/ISAD154/Isad154_project/App_Data/car.Json"))
+            
+
+            string newJson;
+            using (StreamReader r = new StreamReader(@"C:/Users/louis/Desktop/combined project/ISAD154/Isad154_project/App_Data/car.Json"))
             {
-                JsonSerializer serializer = new JsonSerializer();
-                serializer.Serialize(file, this);
+                string json = r.ReadToEnd();
+                List<Car> items = JsonConvert.DeserializeObject<List<Car>>(json);
+                items.Add(this);
+                newJson = JsonConvert.SerializeObject(items);
             }
+            File.WriteAllText(@"C:/Users/louis/Desktop/combined project/ISAD154/Isad154_project/App_Data/car.Json", newJson);
+
 
 
         }

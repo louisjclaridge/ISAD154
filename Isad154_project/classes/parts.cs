@@ -2,42 +2,45 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.IO;
+using Newtonsoft.Json;
 
 /// <summary>
 /// Summary description for parts
 /// </summary>
-public class parts
+public class Parts
 {
     string partName;
-    decimal partPrice;
-    DateTime expectedDelivery; //(?)
+    int partPrice;
+    string expectedDelivery; 
     string supplier;
     int purchaseOrderNumber;
     string returnReason;
-    DateTime returnDate;   //(?)
-    string returnConCode;
+    string returnDate;   
+    int returnConCode;
+
 
    
    
-    //commodity
-    public parts(string inPartName, decimal inPartPrice )
-    {
-        partName = inPartName;
-        partPrice = inPartPrice;
-    }
-    //specialised
-    public parts(string inPartName, decimal inPartPrice, DateTime inExpectedDelivery, string inSupplier, 
-        int inPurchaseOrderNumber)
-    {
-        partName = inPartName;
-        partPrice = inPartPrice;
-        expectedDelivery = inExpectedDelivery;
-        supplier = inSupplier;
-        purchaseOrderNumber = inPurchaseOrderNumber;
-    }
-    //returns
-    public parts(string inPartName, decimal inPartPrice, DateTime inExpectedDelivery, string inSupplier,
-       int inPurchaseOrderNumber, string inReturnReason, DateTime inReturnDate, string inReturnConCode)
+    ////commodity
+    //public Parts(string inPartName, decimal inPartPrice )
+    //{
+    //    partName = inPartName;
+    //    partPrice = inPartPrice;
+    //}
+    ////specialised
+    //public Parts(string inPartName, decimal inPartPrice, string inExpectedDelivery, string inSupplier, 
+    //    int inPurchaseOrderNumber)
+    //{
+    //    partName = inPartName;
+    //    partPrice = inPartPrice;
+    //    expectedDelivery = inExpectedDelivery;
+    //    supplier = inSupplier;
+    //    purchaseOrderNumber = inPurchaseOrderNumber;
+    //}
+    ////returns
+    public Parts(string inPartName, int inPartPrice, string inExpectedDelivery, string inSupplier,
+       int inPurchaseOrderNumber, string inReturnReason, string inReturnDate, int inReturnConCode)
     {
         partName = inPartName;
         partPrice = inPartPrice;
@@ -61,7 +64,7 @@ public class parts
            partName = value;
         }
     }
-    public decimal PartPrice
+    public int PartPrice
     {
         get
         {
@@ -72,7 +75,7 @@ public class parts
             partPrice = value;
         }
     }
-    public DateTime ExpectedDelivery
+    public string ExpectedDelivery
     {
         get
         {
@@ -113,10 +116,10 @@ public class parts
         }
         set
         {
-            ReturnReason = value;
+            returnReason = value;
         }
     }
-    public DateTime ReturnDate
+    public string ReturnDate
     {
         get
         {
@@ -127,7 +130,7 @@ public class parts
             returnDate = value;
         }
     }
-    public string ReturnConCode
+    public int ReturnConCode
     {
         get
         {
@@ -138,11 +141,37 @@ public class parts
             returnConCode = value;
         }
     }
+    public static List<Parts> getParts()
+    {
+        using (StreamReader file = new StreamReader("C:/Users/louis/Desktop/combined project/ISAD154/Isad154_project/App_Data/parts.json"))
+        {
+            string json = file.ReadToEnd();
 
-    //methods
+            List<Parts> items = JsonConvert.DeserializeObject<List<Parts>>(json);
 
-    //displayparts
-    //parts format
-    // get parts
+            return items;
+        }
 
+    }
+    public string getCommodityPartsDisplayFormat()
+    {
+        string output;
+        output = "partName: " + partName + " " + "partPrice: " + partPrice + " " + "supplier: " + " " + supplier;
+        return output;
+    }
+    public string getSpecialisedPartsDisplayFormula()
+    {
+        string output;
+        output = "partName: " + partName + " " + "partPrice: " + partPrice + " " + "expectedDelivery: " + expectedDelivery + " " + "supplier: " + supplier + " " + "purchaseOrderNumber: " + purchaseOrderNumber;
+        return output;
+    }
+    public string getReturnsPartsDisplayFormula()
+    {
+        string output;
+        output = "purchaseOrderNumber: " + purchaseOrderNumber + " " + "returnReason: " + returnReason + " " + "returnDate: " + returnDate + " " + "returnConCode: " + returnConCode;
+        return output;
+    }
+
+
+    
 }

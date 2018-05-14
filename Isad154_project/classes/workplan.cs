@@ -2,22 +2,31 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Isad154_project;
+using Newtonsoft.Json;
+using System.Text;
+using System.IO;
+using System.Collections;
+
 
 /// <summary>
 /// Summary description for workplan
 /// </summary>
-public class workplan
+public class Workplan
 {
-    private int workplanNumber;
+    private int workplanNumber; 
     private string workplanNotes;
     private string workplanProblem;
     private string checkInDate; //maybe change to dates
     private string dueDate;  //maybe change to dates
     private string workplanStatus;
+    //private ArrayList allWorkplans;
 
 
-    public workplan(int inWorkplanNumber, string inWorkplanNotes, 
-        string inWorkplanProblem, string inCheckInDate, string inDueDate, string inWorkplanStatus )
+
+
+    public Workplan(int inWorkplanNumber, string inWorkplanNotes,
+        string inWorkplanProblem, string inCheckInDate, string inDueDate, string inWorkplanStatus)
     {
         workplanNumber = inWorkplanNumber;
         workplanNotes = inWorkplanNotes;
@@ -25,10 +34,12 @@ public class workplan
         checkInDate = inCheckInDate;
         dueDate = inDueDate;
         workplanStatus = inWorkplanStatus;
-        
-    }
 
-    //properties 
+
+    }
+   
+
+    
 
     public int WorkplanNumber
     {
@@ -45,7 +56,7 @@ public class workplan
     {
         get
         {
-            return workplanNotes ;
+            return workplanNotes;
         }
         set
         {
@@ -60,7 +71,7 @@ public class workplan
         }
         set
         {
-             workplanProblem = value;
+            workplanProblem = value;
         }
     }
     public string CheckInDate
@@ -82,7 +93,7 @@ public class workplan
         }
         set
         {
-             dueDate = value;
+            dueDate = value;
         }
     }
     public string WorkplanStatus
@@ -93,17 +104,50 @@ public class workplan
         }
         set
         {
-             workplanStatus = value;
+            workplanStatus = value;
         }
     }
-    //methods 
-    // need to select the file we are reading/saving to 
+  
+   
+    public void SaveWorkplan()
+    {
+        string newJson;
+        using (StreamReader file = new StreamReader(@"C:/Users/louis/Desktop/combined project/ISAD154/Isad154_project/App_Data/workplan.json"))
+        {
+            string json = file.ReadToEnd();
+            List<Workplan> items = JsonConvert.DeserializeObject<List<Workplan>>(json);
+            items.Add(this);
+            newJson = JsonConvert.SerializeObject(items);
+            
+        }
+        File.WriteAllText(@"C:/Users/louis/Desktop/combined project/ISAD154/Isad154_project/App_Data/workplan.json", newJson);
+
+    }
+    public static List<Workplan> getWorkplans()
+    {
+        using (StreamReader file = new StreamReader("C:/Users/louis/Desktop/combined project/ISAD154/Isad154_project/App_Data/workplan.json"))
+        {
+            string json = file.ReadToEnd();
+
+            List<Workplan> items = JsonConvert.DeserializeObject<List<Workplan>>(json);
+
+            return items;
+        }
+       
+
+    }
+    public static void UpdateWorkplan(List<Workplan> workplanInput)
+    {
+        List<Workplan> workplan = workplanInput;
+        string newJson;
+
+        using (StreamReader newStream = new StreamReader(@"C:/Users/louis/Desktop/combined project/ISAD154/Isad154_project/App_Data/workplan.json"))
+        {
+            newJson = JsonConvert.SerializeObject(workplan);
+        }
+        File.WriteAllText(@"C:/Users/louis/Desktop/combined project/ISAD154/Isad154_project/App_Data/workplan.json", newJson);
+      
+    }
     
-    //create workplan
-    //select workplan
-    //update workplan
-    //work plan display format 
-
-
-
+  
 }

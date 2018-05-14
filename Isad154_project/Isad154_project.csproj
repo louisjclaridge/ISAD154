@@ -83,25 +83,6 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
-<<<<<<< HEAD
-    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
-    </Reference>
-=======
-    <Reference Include="System.Windows.Forms" />
->>>>>>> master
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -222,6 +203,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="CreateBooking.aspx" />
     <Content Include="CreateCar.aspx" />
+    <Content Include="CreateTask.aspx" />
+    <Content Include="createuser.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -230,14 +213,19 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-<<<<<<< HEAD
-    <Content Include="workplan.aspx" />
-    <Content Include="App_Data\workplan.json" />
-=======
+    <Content Include="App_Data\users.json" />
+    <Content Include="ClassDiagram1.cd" />
+    <Content Include="App_Data\Booking.json" />
     <Content Include="App_Data\Car.json" />
->>>>>>> master
+    <Content Include="App_Data\parts.json" />
+    <Content Include="App_Data\workplan.json" />
+    <Content Include="ReadStaff.aspx" />
+    <Content Include="workplan.aspx" />
+    <Content Include="App_Data\tasks.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Hub.aspx" />
+    <Content Include="login.aspx" />
+    <Content Include="parts.aspx" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -272,6 +260,9 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="stylesheet.css" />
+    <Content Include="UpdateUser.aspx" />
+    <Content Include="ViewBookingFix.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -396,16 +387,14 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-<<<<<<< HEAD
-    <Compile Include="classes\parts.cs" />
-    <Compile Include="classes\workplan.cs" />
-    <Compile Include="Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-=======
+    <Compile Include="Classes\Booking.cs" />
     <Compile Include="Classes\Car.cs" />
+    <Compile Include="Classes\Parts.cs" />
+    <Compile Include="Classes\Tasks.cs" />
+    <Compile Include="Classes\User.cs" />
+    <Compile Include="Classes\Workplan.cs" />
     <Compile Include="CreateBooking.aspx.cs">
       <DependentUpon>CreateBooking.aspx</DependentUpon>
->>>>>>> master
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CreateBooking.aspx.designer.cs">
@@ -418,6 +407,20 @@
     <Compile Include="CreateCar.aspx.designer.cs">
       <DependentUpon>CreateCar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CreateTask.aspx.cs">
+      <DependentUpon>CreateTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateTask.aspx.designer.cs">
+      <DependentUpon>CreateTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="createuser.aspx.cs">
+      <DependentUpon>createuser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="createuser.aspx.designer.cs">
+      <DependentUpon>createuser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -428,8 +431,29 @@
     <Compile Include="Hub.aspx.designer.cs">
       <DependentUpon>Hub.aspx</DependentUpon>
     </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="parts.aspx.cs">
+      <DependentUpon>parts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="parts.aspx.designer.cs">
+      <DependentUpon>parts.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadStaff.aspx.cs">
+      <DependentUpon>ReadStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReadStaff.aspx.designer.cs">
+      <DependentUpon>ReadStaff.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -445,6 +469,20 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="UpdateUser.aspx.cs">
+      <DependentUpon>UpdateUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateUser.aspx.designer.cs">
+      <DependentUpon>UpdateUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewBookingFix.aspx.cs">
+      <DependentUpon>ViewBookingFix.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewBookingFix.aspx.designer.cs">
+      <DependentUpon>ViewBookingFix.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

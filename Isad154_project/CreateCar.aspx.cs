@@ -7,19 +7,27 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Windows.Forms;
 namespace Isad154_project
 {
     public partial class CreateCar : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                foreach (Car c in getAllCars())
+                {
+                    lstBoxCars.Items.Add(c.CarId);
+                    //lstBoxCars.SelectedIndex = 0;
+                }
+            }
+            
+           
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Car newCar = new Car(carReg.Text,carPersonal.Text,carYear.Text,carManufacture.Text,carModel.Text,carNotes.Text,carLastMOT.Text);
+            Car newCar = new Car(CarId.Text,carReg.Text,carPersonal.Text,carYear.Text,carManufacture.Text,carModel.Text,carNotes.Text,carLastMOT.Text);
 
             newCar.writeToJson();
             
@@ -32,15 +40,107 @@ namespace Isad154_project
         }
 
 
-        private void readCar()
+        public void readCar()
         {
-            using (StreamReader r = new StreamReader("C:/Users/Jack Parsons/Documents/GitHub/ISAD154/Isad154_project/App_Data/Car.json"))
+            using (StreamReader r = new StreamReader("C:/Users/louis/Desktop/combined project/ISAD154/Isad154_project/App_Data/Car.json"))
             {
+
                 string json = r.ReadToEnd();
+                
+                
                 List<Car> items = JsonConvert.DeserializeObject<List<Car>>(json);
-                MessageBox.Show(items[1].CarReg.ToString());
+
+                //MessageBox.Show(items[1].CarReg.ToString());
+                
+                
+            }
+            
+
+        }
+
+        public static List<Car> getAllCars()
+        {
+            using (StreamReader r = new StreamReader("C:/Users/louis/Desktop/combined project/ISAD154/Isad154_project/App_Data/Car.json"))
+            {
+
+                string json = r.ReadToEnd();
+
+
+                List<Car> items = JsonConvert.DeserializeObject<List<Car>>(json);
+                return items;
+
+
             }
 
+
+        }
+        //****************************************************
+        //****************************************************
+        //REFERENCE REAL GET ALL USERS
+        //SHOULD BE IN LOUIS CREATE USER PAGE
+        //********************************************
+        //********************************************
+        public static List<Classes.User> getAllUsers()
+        {
+            using (StreamReader r = new StreamReader("C:/Users/louis/Desktop/combined project/ISAD154/Isad154_project/App_Data/users.json"))
+            {
+
+                string json = r.ReadToEnd();
+
+
+                List<Classes.User> items = JsonConvert.DeserializeObject<List<Classes.User>>(json);
+                return items;
+
+
+            }
+
+
+        }
+
+        protected void lstBoxCars_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Car c = getAllCars()[lstBoxCars.SelectedIndex];
+            CarId.Text = c.CarId;
+            carReg.Text = c.CarReg;
+            carPersonal.Text = c.CarPersonal;
+            carYear.Text = c.CarYear;
+            carManufacture.Text = c.CarManufacture;
+            carModel.Text = c.CarModel;
+            carNotes.Text = c.CarNotes;
+            carLastMOT.Text = c.CarLastMOT;
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            //Turn this into one button combiened with create
+
+            Car c = getAllCars()[lstBoxCars.SelectedIndex];
+            c.CarId = CarId.Text;
+            c.CarReg = carReg.Text;
+            c.CarPersonal = carPersonal.Text;
+            c.CarYear = carYear.Text;
+            c.CarManufacture = carManufacture.Text;
+            c.CarModel = carModel.Text;
+            c.CarNotes = carNotes.Text;
+            c.CarLastMOT = carLastMOT.Text;
+            List<Car> cars = getAllCars();
+            cars[lstBoxCars.SelectedIndex] = c;
+            writeUpdateToJson(cars);
+            
+        }
+        private void writeUpdateToJson(List<Car> inputCars)
+        {
+            //MessageBox.Show("Working");
+            List<Car> cars = inputCars;
+            string newJson;
+            using (StreamReader r = new StreamReader(@"C:/Users/louis/Desktop/combined project/ISAD154/Isad154_project/App_Data/car.Json"))
+            {
+                
+                
+                
+                newJson = JsonConvert.SerializeObject(cars);
+            }
+            File.WriteAllText(@"C:/Users/louis/Desktop/combined project/ISAD154/Isad154_project/App_Data/car.Json", newJson);
         }
     }
 }
